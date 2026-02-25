@@ -29,7 +29,7 @@
       font-family: 'Jost', sans-serif;
       background: var(--white);
       color: var(--dark);
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* ============ NAV ============ */
@@ -100,14 +100,19 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow: visible;
   }
 
   /* mostra hamburger */
   .nav-toggle {
     display: block;
-    margin-left: auto;  /* spinge il pulsante a destra ma dentro il viewport */
+    margin-left: auto;
     position: relative;
     z-index: 101;
+    flex-shrink: 0;
   }
 
   /* menu verticale sotto l'hamburger a destra */
@@ -1479,22 +1484,22 @@ nav {
           <img src="/icem2026/images/logo_unint.jpg" alt="UNINT" style="height:80px; object-fit:contain;">
         </a>
         <a href="https://www.uniroma1.it" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/icem2026/images/logo_sapienza.jpg" alt="Sapienza" style="height:80px; object-fit:contain; mix-blend-mode:multiply;">
+          <img src="/icem2026/images/logo_sapienza.jpg" alt="Sapienza" style="height:80px; object-fit:contain;">
         </a>
         <a href="https://aipass.org" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/icem2026/images/logo_AIP.jpg" alt="AIP" style="height:80px; object-fit:contain; mix-blend-mode:multiply;">
+          <img src="/icem2026/images/logo_AIP.jpg" alt="AIP" style="height:80px; object-fit:contain;">
         </a>
         <a href="https://mindandlife-europe.org" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/icem2026/images/logo_MLE.jpg" alt="Mind &amp; Life Europe" style="height:100px; object-fit:contain; mix-blend-mode:multiply;">
+          <img src="/icem2026/images/logo_MLE.jpg" alt="Mind &amp; Life Europe" style="height:100px; object-fit:contain;">
         </a>
         <a href="https://unionebuddhistaitaliana.it/en/" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/icem2026/images/logo_UBI.jpg" alt="Unione Buddhista Italiana" style="height:80px; object-fit:contain; mix-blend-mode:multiply;">
+          <img src="/icem2026/images/logo_UBI.jpg" alt="Unione Buddhista Italiana" style="height:80px; object-fit:contain;">
         </a>
         <a href="https://www.italiamindfulness.it" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/icem2026/images/logo_italiamindfulness.jpg" alt="Italia Mindfulness" style="height:90px; object-fit:contain; mix-blend-mode:multiply;">
+          <img src="/icem2026/images/logo_italiamindfulness.jpg" alt="Italia Mindfulness" style="height:90px; object-fit:contain;">
         </a>
         <a href="https://innerdevelopmentgoals.org" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/icem2026/images/logo_inner.jpg" alt="Inner Development Goals" style="height:80px; object-fit:contain; mix-blend-mode:multiply;">
+          <img src="/icem2026/images/logo_inner.jpg" alt="Inner Development Goals" style="height:80px; object-fit:contain;">
         </a>
       </div>
     </div>
