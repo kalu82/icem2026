@@ -1521,7 +1521,7 @@ nav {
   <!-- ============ CONTACT ============ -->
   <section style="padding: 7rem 0; background: var(--dark);">
     <div class="container">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:3rem; align-items:start;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:3rem; align-items:start;">
 
         <div>
           <div class="section-tag" style="color:var(--teal-light);">Contact Us</div>
@@ -1608,7 +1608,7 @@ nav {
       </div>
       <form action="https://formspree.io/f/meelvewp" method="POST" style="display:flex; gap:0; flex-wrap:wrap;">
         <input type="email" name="email" required placeholder="your@email.com"
-          style="padding:0.85rem 1.2rem; font-family:'Outfit',sans-serif; font-size:0.85rem; border:none; outline:none; min-width:240px; background:#fff; color:var(--dark);">
+          style="padding:0.85rem 1.2rem; font-family:'Outfit',sans-serif; font-size:0.85rem; border:none; outline:none; min-width:0; width:100%; max-width:280px; background:#fff; color:var(--dark);">
         <input type="hidden" name="subject" value="ICEM 2026 Newsletter Subscription">
         <input type="hidden" name="message" value="Please add me to the ICEM 2026 mailing list.">
         <button type="submit"
@@ -1620,7 +1620,7 @@ nav {
     </div>
 
     <!-- Main footer -->
-    <div style="background:var(--dark); border-top:1px solid rgba(106,191,75,0.15); padding: 2.5rem clamp(1rem, 5vw, 4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+    <div style="background:var(--dark); border-top:1px solid rgba(106,191,75,0.15); padding: 2.5rem clamp(1rem, 5vw, 4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-sizing:border-box; max-width:100%">
     <div class="footer-logo">ICEM 2026 · International Conference on Environmental Mindfulness</div>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
