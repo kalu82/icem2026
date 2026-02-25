@@ -1153,8 +1153,6 @@ nav {
       .dates-grid { grid-template-columns: 1fr; }
       .stats-strip { grid-template-columns: 1fr 1fr; }
       .container { padding: 0 1.5rem; }
-      img { max-width: 100%; height: auto; }
-      .speaker-avatar img { width: 100%; height: 100%; }
     }
   </style>
 </head>
@@ -1621,8 +1619,30 @@ nav {
       </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
-        if 
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+      links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => links.classList.remove('show'));
+      });
+    });
+  </script>
+
+</body>
+</html>
