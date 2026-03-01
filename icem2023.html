@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICEM 2023 — First Edition · Rome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sage: #7a9e7e;
+      --sage-light: #b8d4bb;
+      --sage-pale: #eef5ef;
+      --earth: #6b5c4e;
+      --earth-light: #c2a98e;
+      --cream: #f9f6f1;
+      --charcoal: #2c2c2c;
+      --muted: #7a7570;
+      --accent: #4a7c59;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(249, 246, 241, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(122, 158, 126, 0.2);
+    }
+
+    nav .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--earth);
+      text-decoration: none;
+    }
+
+    nav .brand span { color: var(--accent); font-style: italic; }
+
+    nav .nav-links { display: flex; gap: 2rem; list-style: none; }
+    nav .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--accent); }
+
+    nav .nav-2026 {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--accent);
+      padding: 0.5rem 1.2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    nav .nav-2026:hover { background: var(--earth); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 70px;
+    }
+
+    .hero-left {
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 4rem 4rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+
+    .hero-left-content { position: relative; z-index: 1; }
+
+    .edition-badge {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 4.5vw, 5rem);
+      line-height: 1.05;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--sage-light);
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      max-width: 38ch;
+      margin-bottom: 3rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .hero-meta-item .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .hero-right {
+      background: var(--sage-pale);
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-stats-grid {
+      width: 100%;
+      padding: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: rgba(122, 158, 126, 0.15);
+      align-content: center;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat-card:nth-child(1) { background: var(--accent); }
+    .stat-card:nth-child(1) .stat-number,
+    .stat-card:nth-child(1) .stat-label { color: white; }
+    .stat-card:nth-child(1) .stat-desc { color: rgba(255,255,255,0.7); }
+
+    .stat-card:nth-child(3) { background: var(--charcoal); }
+    .stat-card:nth-child(3) .stat-number,
+    .stat-card:nth-child(3) .stat-label { color: white; }
+    .stat-card:nth-child(3) .stat-desc { color: rgba(255,255,255,0.6); }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .stat-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 7rem 0; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--sage);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em { font-style: italic; color: var(--accent); }
+
+    /* ── SECTION BACKGROUND IMAGE SYSTEM ──
+       To add a background image to any section, add:
+         data-bg="images/2023/your-photo.jpg"
+       Optionally control overlay darkness with:
+         data-bg-overlay="0.5"   (0 = transparent, 1 = fully dark; default 0.55)
+       JS at the bottom handles the rest automatically.
+    ── */
+    [data-bg] {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    [data-bg] > .section-bg-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Push section content above the overlay */
+    [data-bg] > .container,
+    [data-bg] > .about-grid,
+    [data-bg] > .committee-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* When a light section gets a bg image, flip text colours */
+    [data-bg].about,
+    [data-bg].gallery,
+    [data-bg].committee {
+      color: white;
+    }
+
+    [data-bg].about .section-title,
+    [data-bg].gallery .section-title,
+    [data-bg].committee .section-title { color: white; }
+
+    [data-bg].about .section-label,
+    [data-bg].gallery .section-label,
+    [data-bg].committee .section-label { color: var(--sage-light); }
+
+    [data-bg].about .section-label::before,
+    [data-bg].gallery .section-label::before,
+    [data-bg].committee .section-label::before { background: var(--sage-light); }
+
+    [data-bg].about .about-body,
+    [data-bg].about .about-body p { color: rgba(255,255,255,0.7); }
+
+    [data-bg].about .feature-item { background: rgba(255,255,255,0.07); border-color: var(--sage); }
+    [data-bg].about .feature-item p { color: rgba(255,255,255,0.6); }
+    [data-bg].about .feature-item h4 { color: var(--sage-light); }
+
+    [data-bg].gallery .gallery-intro { color: rgba(255,255,255,0.65); }
+    [data-bg].gallery .gallery-item { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.2); }
+    [data-bg].gallery .placeholder-label { color: rgba(255,255,255,0.5); }
+
+    [data-bg].committee .member-name { color: white; }
+    [data-bg].committee .member-inst { color: rgba(255,255,255,0.5); }
+    [data-bg].committee .committee-member { background: rgba(255,255,255,0.07); }
+
+    /* ── ABOUT ── */
+    .about { background: white; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-body {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: #4a4a4a;
+    }
+
+    .about-body p + p { margin-top: 1.2rem; }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .feature-item {
+      padding: 1.5rem;
+      border-left: 2px solid var(--sage-light);
+      background: var(--sage-pale);
+    }
+
+    .feature-item h4 {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ── DIALOGUES ── */
+    .dialogues {
+      position: relative;
+      background-color: var(--charcoal);
+      background-image: url('images/2023/dialogues-bg.jpg'); /* ← replace with your photo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .dialogues-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(25, 30, 26, 0.80);
+    }
+
+    .dialogues .container { position: relative; z-index: 1; }
+    .dialogues .section-label { color: var(--sage-light); }
+    .dialogues .section-label::before { background: var(--sage-light); }
+    .dialogues .section-title { color: white; }
+
+    .dialogues-body {
+      max-width: 62ch;
+      margin-top: 2rem;
+    }
+
+    .dialogues-body p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.2rem;
+    }
+
+    .dialogues-names {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2.5rem;
+      row-gap: 0.4rem;
+    }
+
+    .dialogues-body strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+
+    /* ── GALLERY ── */
+    .gallery { background: var(--cream); }
+
+    .gallery-intro {
+      max-width: 55ch;
+      margin-bottom: 3.5rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 240px 200px;
+      gap: 8px;
+    }
+
+    .gallery-item {
+      background: var(--sage-pale);
+      border: 1px dashed rgba(122, 158, 126, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item:hover { background: rgba(122, 158, 126, 0.12); }
+
+    .gallery-item:nth-child(1) {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+
+    .gallery-item:nth-child(2) {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .gallery-item:nth-child(3) {
+      grid-column: 4;
+      grid-row: 1;
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .gallery-item:nth-child(5) {
+      grid-column: 2 / 4;
+      grid-row: 2;
+    }
+
+    .gallery-item:nth-child(6) {
+      grid-column: 4;
+      grid-row: 2;
+    }
+
+    .placeholder-icon {
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(122, 158, 126, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .placeholder-icon svg {
+      width: 16px; height: 16px;
+      opacity: 0.5;
+      color: var(--accent);
+    }
+
+    .placeholder-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sage);
+      opacity: 0.7;
+    }
+
+    /* ── COMMITTEE ── */
+    .committee {
+      background: var(--sage-pale);
+      padding: 5rem 0;
+    }
+
+    .committee-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .committee-members {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+    }
+
+    .committee-member {
+      padding: 0.9rem 1rem;
+      background: white;
+      font-size: 0.78rem;
+    }
+
+    .committee-member .member-name {
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    .committee-member .member-inst {
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    /* ── FOOTER-BANNER ── */
+    .next-edition {
+      background: var(--accent);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .next-edition h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 0.8rem;
+    }
+
+    .next-edition p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2rem;
+    }
+
+    .btn-white {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: white;
+      padding: 0.9rem 2.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-white:hover { opacity: 0.9; }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 5rem 2rem 3rem; min-height: 60vh; }
+      .hero-stats-grid { padding: 2rem; }
+      .about-grid,
+      .committee-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 180px); }
+      .gallery-item { grid-column: auto !important; grid-row: auto !important; }
+      nav .nav-links { display: none; }
+      .container { padding: 0 1.5rem; }
+      section { padding: 4rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://www.environmentalmindfulness.org/" class="brand">ICEM · <span>Past Editions</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#speakers">Dialogues</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#committee">Committee</a></li>
+    </ul>
+    <a href="https://www.environmentalmindfulness.org/" class="nav-2026">ICEM 2026 →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left" data-bg="images/2023/hero-bg.jpg" data-bg-overlay="0.75">
+      <div class="hero-left-content">
+        <div class="edition-badge">ICEM 1st edition</div>
+        <h1 class="hero-title">ICEM 2023</h1>
+        <p class="hero-subtitle">Rome, 13–16 November 2023<br>Aula Marconi · CNR</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><span class="dot"></span> Aula Marconi, CNR · Rome · In person &amp; Virtual</div>
+          <div class="hero-meta-item"><span class="dot"></span> 13–16 November 2023</div>
+          <div class="hero-meta-item"><span class="dot"></span> 5 Keynote Speakers + 1 Guest</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div>
+            <div class="stat-number" data-target="63">0</div>
+            <div class="stat-label">In-person participants</div>
+          </div>
+          <div class="stat-desc">Researchers and contemplatives gathered at Aula Marconi, CNR, Rome.</div>
+        </div>
+        <div class="stat-card">
+          <div>
+            <div class="stat-number" data-target="40">0</div>
+            <div class="stat-label">Virtual participants</div>
+          </div>
+          <div class="stat-desc">Remote attendees from around the world joined the live stream.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about" data-bg="images/2023/about-bg.jpg" data-bg-overlay="0.88">
+    <div class="container">
+      <div class="about-grid fade-in">
+        <div>
+          <p class="section-label">About the conference</p>
+          <h2 class="section-title">First <em>edition</em>, Rome 2023</h2>
+          <div class="about-body">
+            <p>The 1st International Conference on Environmental Mindfulness (ICEM) provided the opportunity for researchers and contemplatives to meet and share ideas on the intersection of mindfulness and sustainable behaviors.</p>
+            <p>ICEM brought together the community of environmental psychologists, mindfulness experts, and neuropsychological scientists to draw a shared research agenda for the years ahead — not only defining the state of the art, but creating a community of passionate scientists and environmentally conscious people.</p>
+            <p>Keynote lectures from leading scientists were paired in the same sessions with talks from contemplative practitioners — a distinctive format that has since become central to the ICEM identity.</p>
+          </div>
+        </div>
+        <div class="features-list">
+          <div class="feature-item">
+            <h4>Establish &amp; Promote a New Dialogue</h4>
+            <p>Contemplative science and environmental psychology have much to tell each other. ICEM was designed as a channel between research fields and persons who had long worked in parallel.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Daily Meditations &amp; Practices</h4>
+            <p>Each conference day began and closed with a guided meditation on human–nature connectedness. Meditations were led by contemplative masters and qualified mindfulness teachers.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Present in Rome · Follow Anywhere</h4>
+            <p>Presentations were delivered in person at the Aula Marconi of the Consiglio Nazionale delle Ricerche (CNR) in Rome, while online participation was made accessible to attendees from around the world.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIALOGUES -->
+  <section class="dialogues" id="speakers">
+    <div class="dialogues-overlay"></div>
+    <div class="container">
+      <p class="section-label fade-in">Invited Speakers</p>
+      <h2 class="section-title fade-in">Dialogues</h2>
+
+      <div class="dialogues-body fade-in">
+        <p>One of the defining features of ICEM is its dialogue format: each session pairs a keynote lecture from a leading scientist with a contribution from a researcher or practitioner from a different tradition. The aim is not debate, but genuine exchange — allowing different ways of knowing to inform each other in the same room.</p>
+        <p>The first edition opened with <em>Jon Kabat-Zinn</em>, whose reflection on attention and awareness set the tone for the days that followed. The dialogue sessions then brought together <em>Christian A. Klöckner</em> and <em>Marieke van Vugt</em> on the relationship between environmental behaviour and contemplative science; <em>Florian G. Kaiser</em> and <em>William Van Gordon</em> on attitude, practice and ecological action; and <em>Liane Stephan</em> and <em>James Bristow</em> on the inner dimensions of sustainability and systemic change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery" data-bg="images/2023/gallery-bg.jpg" data-bg-overlay="0.7">
+    <div class="container">
+      <p class="section-label fade-in">Moments from Rome</p>
+      <h2 class="section-title fade-in">Conference <em>Gallery</em></h2>
+      <p class="gallery-intro fade-in">A selection of moments from the first edition — keynote sessions, guided meditations, and the connections forged between participants at Aula Marconi, CNR, Rome.</p>
+
+      <div class="gallery-grid fade-in">
+        <!-- Placeholder items — replace src with images from your GitHub folder -->
+        <div class="gallery-item">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <span class="placeholder-label">photo coming soon</span>
+        </div>
+
+        <div class="gallery-item">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <span class="placeholder-label">photo coming soon</span>
+        </div>
+
+        <div class="gallery-item">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <span class="placeholder-label">photo coming soon</span>
+        </div>
+
+        <div class="gallery-item">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <span class="placeholder-label">photo coming soon</span>
+        </div>
+
+        <div class="gallery-item">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <span class="placeholder-label">photo coming soon</span>
+        </div>
+
+        <div class="gallery-item">
+          <div class="placeholder-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <span class="placeholder-label">photo coming soon</span>
+        </div>
+      </div>
+
+      <!-- Developer note -->
+      <p style="margin-top: 1rem; font-size: 0.72rem; color: var(--muted); font-style: italic;">
+        → To add photos: place images in your GitHub folder (e.g. <code>images/2023/</code>) and replace each <code>&lt;div class="gallery-item"&gt;</code> with <code>&lt;img src="images/2023/your-photo.jpg" alt="..." style="width:100%;height:100%;object-fit:cover;"&gt;</code>
+      </p>
+    </div>
+  </section>
+
+  <!-- COMMITTEE -->
+  <section class="committee" id="committee" data-bg="images/2023/committee-bg.jpg" data-bg-overlay="0.82">
+    <div class="container">
+      <div class="committee-inner fade-in">
+        <div>
+          <p class="section-label">Academic leadership</p>
+          <h2 class="section-title">Scientific <em>Committee</em></h2>
+          <p style="font-size:0.85rem; font-weight:300; line-height:1.75; color:var(--muted); margin-top:1.2rem;">The 2023 edition was supported by an international scientific committee representing nine research institutions across five continents.</p>
+        </div>
+        <div class="committee-members">
+          <div class="committee-member">
+            <div class="member-name">Prof. Luca Simione</div>
+            <div class="member-inst">CNR, Rome, Italy</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Prof. Antonino Raffone</div>
+            <div class="member-inst">Sapienza University, Rome</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Dr. Salvatore G. Chiarella</div>
+            <div class="member-inst">SISSA, Trieste, Italy</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Prof. Oleg Medvedev</div>
+            <div class="member-inst">University of Waikato, NZ</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Prof. Simone Grassini</div>
+            <div class="member-inst">University of Bergen, Norway</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Dr. Mirko Duradoni</div>
+            <div class="member-inst">University of Florence, Italy</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Dr. Johannes Karl</div>
+            <div class="member-inst">Dublin City University, Ireland</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Dr. Pascal Frank</div>
+            <div class="member-inst">Leuphana University, Germany</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Dr. Hasan Erguler</div>
+            <div class="member-inst">Eastern Mediterranean Univ.</div>
+          </div>
+          <div class="committee-member">
+            <div class="member-name">Dr. Ute Barbara Thiermann</div>
+            <div class="member-inst">Imperial College London, UK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT EDITION CTA -->
+  <div class="next-edition">
+    <h3>The next edition is coming — Rome, 2026</h3>
+    <p>17–19 September · UNINT · In person &amp; Virtual</p>
+    <a href="https://www.environmentalmindfulness.org/" class="btn-white">Discover ICEM 2026</a>
+  </div>
+
+  <script>
+    // ── Section background image system ──
+    // Reads data-bg and data-bg-overlay from any element.
+    // If the image file doesn't exist yet, falls back gracefully to the default bg colour.
+    document.querySelectorAll('[data-bg]').forEach(el => {
+      const src = el.dataset.bg;
+      const opacity = parseFloat(el.dataset.bgOverlay ?? 0.55);
+
+      // Inject overlay div if not already present
+      if (!el.querySelector('.section-bg-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'section-bg-overlay';
+        overlay.style.background = `rgba(20,25,20,${opacity})`;
+        el.prepend(overlay);
+      }
+
+      // Apply background only if image loads (no broken-image flash)
+      const img = new Image();
+      img.onload = () => {
+        el.style.backgroundImage = `url('${src}')`;
+      };
+      img.src = src;
+    });
+
+    // ── Fade-in observer ──
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 4) * 80}ms`;
+      fadeObserver.observe(el);
+    });
+
+    // ── Counter animation ──
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1400;
+      const start = performance.now();
+
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+      counterObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
