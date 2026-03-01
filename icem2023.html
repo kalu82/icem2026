@@ -83,19 +83,20 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
       position: relative;
-      padding-top: 70px;
+      padding-bottom: 1px;
+      padding-top: 1px;
       overflow: hidden;
+      background: var(--charcoal);
     }
 
     .hero-left {
-      position: absolute;
+      position: relative;
       inset: 0;
       background: var(--charcoal);
       display: flex;
       align-items: center;
-      padding: 4rem 4rem 4rem 5rem;
+      padding: 10rem 5rem 5rem 8rem;
     }
 
     .hero-left-content { position: relative; z-index: 1; }
@@ -108,7 +109,7 @@
       font-style: italic;
       letter-spacing: 0.04em;
       color: rgba(255,255,255,0.4);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .hero-title {
@@ -117,7 +118,7 @@
       font-size: clamp(2.8rem, 4.5vw, 5rem);
       line-height: 1.05;
       color: white;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-title em {
@@ -128,7 +129,7 @@
     .hero-subtitle {
       font-size: 0.9rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.85);
       line-height: 1.7;
       max-width: 38ch;
       margin-bottom: 3rem;
@@ -157,8 +158,8 @@
 
     .hero-right {
       position: absolute;
-      bottom: 3rem;
-      right: 3rem;
+      top: 10rem;
+      right: 5rem;
       z-index: 2;
       display: flex;
       gap: 1rem;
@@ -171,8 +172,6 @@
 
     .stat-card {
       background: rgba(20, 25, 20, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(184, 212, 187, 0.2);
       padding: 1.8rem 2rem;
       display: flex;
       flex-direction: column;
@@ -185,7 +184,7 @@
       font-size: 3.5rem;
       line-height: 1;
       color: white;
-      margin-bottom: 0.4rem;
+      margin-bottom: 1rem;
     }
 
     .stat-label {
@@ -611,18 +610,12 @@
   </nav>
 
   <!-- HERO -->
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-left" data-bg="images2023/sfondo_2023.jpg" data-bg-overlay="0.6">
       <div class="hero-left-content">
         <div class="edition-badge">ICEM 1st edition</div>
         <h1 class="hero-title">ICEM 2023</h1>
         <p class="hero-subtitle">Rome, 13–16 November 2023<br>Aula Marconi · CNR</p>
-        <div class="hero-meta">
-          <div class="hero-meta-item"><span class="dot"></span> Aula Marconi, CNR · Rome · In person &amp; Virtual</div>
-          <div class="hero-meta-item"><span class="dot"></span> 13–16 November 2023</div>
-          <div class="hero-meta-item"><span class="dot"></span> 5 Keynote Speakers + 1 Guest</div>
-        </div>
       </div>
     </div>
     <div class="hero-right">
@@ -630,12 +623,12 @@
         <div class="stat-card">
           <div class="stat-number" data-target="63">0</div>
           <div class="stat-label">In-person</div>
-          <div class="stat-desc">participants</div>
+          <div class="stat-label">participants</div>
         </div>
         <div class="stat-card">
           <div class="stat-number" data-target="40">0</div>
           <div class="stat-label">Virtual</div>
-          <div class="stat-desc">participants</div>
+          <div class="stat-label">participants</div>
         </div>
       </div>
     </div>
