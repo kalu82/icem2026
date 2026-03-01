@@ -156,27 +156,22 @@
     }
 
     .hero-right {
-      background: var(--sage-pale);
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      z-index: 2;
       display: flex;
-      align-items: flex-end;
-      padding: 0;
-      position: relative;
-      overflow: hidden;
+      gap: 1rem;
     }
 
     .hero-stats-grid {
-      width: 100%;
-      padding: 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      background: rgba(122, 158, 126, 0.15);
-      align-content: center;
+      display: flex;
+      gap: 1rem;
     }
 
     .stat-card {
       background: white;
-      padding: 2.5rem 2rem;
+      padding: 1.8rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
