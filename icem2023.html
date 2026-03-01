@@ -49,6 +49,8 @@
       letter-spacing: 0.05em;
       color: var(--earth);
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     nav .brand span { color: var(--accent); font-style: italic; }
@@ -611,7 +613,10 @@
 
   <!-- NAV -->
   <nav>
-    <a href="https://www.environmentalmindfulness.org/" class="brand">ICEM · <span>Past Editions</span></a>
+    <a href="https://www.environmentalmindfulness.org/" class="brand">
+      <img src="https://www.environmentalmindfulness.org/images/ICEM_logo.png" alt="ICEM" style="height:36px; object-fit:contain; vertical-align:middle; margin-right:0.6rem;">
+      <span>Past Editions</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#speakers">Dialogues</a></li>
