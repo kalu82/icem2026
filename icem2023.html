@@ -84,22 +84,19 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 70px;
-    }
-
-    .hero-left {
-      background: var(--charcoal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 4rem 4rem 5rem;
       position: relative;
+      padding-top: 70px;
       overflow: hidden;
     }
 
-
+    .hero-left {
+      position: absolute;
+      inset: 0;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      padding: 4rem 4rem 4rem 5rem;
+    }
 
     .hero-left-content { position: relative; z-index: 1; }
 
@@ -627,7 +624,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-left" data-bg="images2023/sfondo_2023.jpg" data-bg-overlay="0.7">
+    <div class="hero-left" data-bg="images2023/sfondo_2023.jpg" data-bg-overlay="0.6">
       <div class="hero-left-content">
         <div class="edition-badge">ICEM 1st edition</div>
         <h1 class="hero-title">ICEM 2023</h1>
