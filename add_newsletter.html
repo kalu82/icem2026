@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Newsletter Subscription</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Outfit, serif;
+    background: #ffffff;
+    color: #111;
+    text-align: center;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  input[type="email"] {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  button {
+    padding: 12px;
+    font-size: 1rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  button:hover {
+    background: #333;
+  }
+  .footer-note {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Join Our Newsletter</h1>
+  <p>Subscribe for updates on ICEM 2026 and other events on mindfulness and sustainability.</p>
+
+  <form action="https://formspree.io/f/meelvewp" method="POST">
+    <input type="email" name="email" placeholder="Enter your email address" required>
+    <!-- GDPR consent line (optional) -->
+    <label style="font-size:0.9rem;">
+      <input type="checkbox" name="consent" required>
+      I agree to receive newsletter emails.
+    </label>
+    <button type="submit">Subscribe</button>
+  </form>
+
+  <div class="footer-note">
+    We respect your privacy — unsubscribe anytime.
+  </div>
+</div>
+
+</body>
+</html>
