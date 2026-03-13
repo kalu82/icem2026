@@ -959,23 +959,34 @@
 
           <div class="venue-details-list">
 
-            <!-- Address + Google Maps -->
-            <div class="venue-detail-row">
-              <div class="venue-detail-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              </div>
-              <div class="venue-detail-text">
-                <strong>UNINT – Università degli Studi Internazionali di Roma</strong>
-                Via Cristoforo Colombo 200, 00147 Rome, Italy
-                <a href="https://maps.google.com/?q=UNINT+Università+degli+Studi+Internazionali+di+Roma,+Via+Cristoforo+Colombo+200,+Roma"
-                  target="_blank" rel="noopener"
-                  style="display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.4rem; font-size:0.78rem; color:var(--teal-dark); text-decoration:none; transition:color 0.2s;"
-                  onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--teal-dark)'">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                  Open in Google Maps →
-                </a>
-              </div>
-            </div>
+			<!-- Address -->
+			<div class="venue-detail-row">
+			  <div class="venue-detail-icon">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+			  </div>
+			  <div class="venue-detail-text">
+				<strong>UNINT – Università degli Studi Internazionali di Roma</strong>
+				<a href="https://maps.google.com/?q=UNINT+Università+degli+Studi+Internazionali+di+Roma,+Via+Cristoforo+Colombo+200,+Roma"
+				  target="_blank" rel="noopener"
+				  style="color:var(--text-body); text-decoration:none; font-weight:300;"
+				  onmouseover="this.style.color='var(--teal-dark)'" onmouseout="this.style.color='var(--text-body)'">
+				  Via Cristoforo Colombo 200, 00147 Rome, Italy
+				</a>
+			  </div>
+			</div>
+
+			<!-- Google Maps embed -->
+			<div style="margin-top:0.5rem; overflow:hidden; border:1px solid var(--border);">
+			  <iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.1!2d12.4895!3d41.8510!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258a7b8a2a1e1d%3A0x1234567890abcdef!2sUNINT%20-%20Universit%C3%A0%20degli%20Studi%20Internazionali%20di%20Roma!5e0!3m2!1sen!2sit!4v1"
+				width="100%"
+				height="220"
+				style="border:0; display:block;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
+			  </iframe>
+			</div>
 
             <!-- Website link -->
             <div style="padding-top:0.5rem;">
