@@ -26,372 +26,115 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Jost', sans-serif;
+      font-family: 'Outfit', sans-serif;
       background: var(--white);
       color: var(--dark);
       overflow-x: clip;
     }
 
     /* ============ NAV ============ */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 4rem;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  text-decoration: none;
-}
-
-.logo-svg { width: 42px; height: 32px; }
-
-.nav-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--teal-dark);
-  text-transform: uppercase;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--teal-dark); }
-
-/* pulsante hamburger nascosto di default */
-.nav-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: var(--teal-dark);
-  cursor: pointer;
-}
-
-/* ============ MOBILE RESPONSIVE ============ */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
-    overflow: visible;
-  }
-
-  /* mostra hamburger */
-  .nav-toggle {
-    display: block;
-    margin-left: auto;
-    position: relative;
-    z-index: 101;
-    flex-shrink: 0;
-  }
-
-  /* menu verticale sotto l'hamburger a destra */
-  .nav-links {
-    position: absolute;
-    top: 100%;            /* subito sotto la navbar */
-    right: 1.5rem;        /* allinea con il pulsante hamburger */
-    background: rgba(255,255,255,0.95);
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-    border-radius: 8px;
-    display: none;        /* nascosto di default */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    width: min(200px, 90vw); /* massimo 200px, mai più largo del 90% viewport */
-  }
-
-  /* menu aperto */
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    display: block;
-    width: 100%;
-    padding: 0.3rem 0;
-  }
-}
-    /* ============ HERO ============ */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      position: relative;
-      padding-top: 72px;
-      overflow: hidden;
-    }
-
-    .hero-bg-pattern {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .hero-bg-pattern circle, .hero-bg-pattern path {
-      fill: none;
-    }
-
-    .hero-left {
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 4rem 6rem 6rem;
-      position: relative;
-    }
-
-    .hero-tag {
-      display: inline-flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.6rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
+      padding: 1rem 4rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .nav-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--teal-dark);
       text-transform: uppercase;
-      color: var(--teal-dark);
-      font-weight: 400;
-      margin-bottom: 2.5rem;
     }
 
-    .hero-tag::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--teal);
-    }
-
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 5.5vw, 5.8rem);
-      font-weight: 300;
-      line-height: 1.02;
-      color: var(--dark);
-      letter-spacing: -0.01em;
-    }
-
-    .hero-title .highlight {
-      color: var(--teal-dark);
-      font-style: italic;
-    }
-
-    .hero-title .highlight-rose {
-      color: var(--rose);
-      font-style: italic;
-    }
-
-    .hero-subtitle {
-      margin-top: 2rem;
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--text-body);
-      max-width: 440px;
-      font-weight: 300;
-    }
-
-    .hero-info-row {
+    .nav-links {
       display: flex;
       gap: 2.5rem;
-      margin-top: 3rem;
+      list-style: none;
       flex-wrap: wrap;
     }
 
-    .info-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-
-    .info-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    .info-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--dark);
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1rem;
-      margin-top: 3.5rem;
-    }
-
-    .btn {
-      display: inline-block;
+    .nav-links a {
       font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 400;
-      text-decoration: none;
-      padding: 0.85rem 2.2rem;
-      transition: all 0.25s;
-    }
-
-    .btn-teal {
-      background: var(--teal);
-      color: var(--white);
-    }
-
-    .btn-teal:hover {
-      background: var(--teal-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline-rose {
-      border: 1.5px solid var(--rose);
-      color: var(--rose);
-    }
-
-    .btn-outline-rose:hover {
-      background: var(--rose-pale);
-    }
-
-    /* Hero right visual panel */
-    .hero-right {
-      background: var(--dark);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 4rem;
-      overflow: hidden;
-    }
-
-    .hero-right-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 70% 30%, rgba(106,191,75,0.12) 0%, transparent 55%),
-        radial-gradient(ellipse at 30% 80%, rgba(240,112,64,0.1) 0%, transparent 50%);
-    }
-
-    .hero-big-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.08;
-    }
-
-    .hero-date-card {
-      background: rgba(106,191,75,0.12);
-      border: 1px solid rgba(106,191,75,0.25);
-      padding: 2rem 2.5rem;
-      margin-bottom: 1px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .date-card-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      margin-bottom: 0.8rem;
-    }
-
-    .date-card-date {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 0.95;
-    }
-
-    .date-card-sub {
-      font-size: 0.78rem;
-      color: var(--teal-light);
-      margin-top: 0.5rem;
-      letter-spacing: 0.06em;
-    }
-
-    .hero-venue-card {
-      background: var(--rose);
-      padding: 1.5rem 2.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .venue-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 0.4rem;
-    }
-
-    .venue-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--white);
-    }
-
-    .venue-detail {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.8);
-      margin-top: 0.2rem;
-    }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
       color: var(--text-muted);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--teal), transparent);
-      animation: scrollPulse 2s infinite;
+    .nav-links a:hover { color: var(--teal-dark); }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--teal-dark);
+      cursor: pointer;
     }
 
+    /* ============ MOBILE ============ */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow: visible;
+      }
+
+      .nav-toggle {
+        display: block;
+        margin-left: auto;
+        position: relative;
+        z-index: 101;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 1.5rem;
+        background: rgba(255,255,255,0.95);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        border-radius: 8px;
+        display: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        width: min(200px, 90vw);
+      }
+
+      .nav-links.show { display: flex; }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.3rem 0;
+      }
+    }
+
+    /* ============ HERO ============ */
     @keyframes scrollPulse {
       0%, 100% { opacity: 0.4; }
       50% { opacity: 1; }
@@ -437,16 +180,12 @@ nav {
     }
 
     .about-left h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       line-height: 1.2;
       color: var(--dark);
-    }
-
-    .about-left h2 em {
-      font-style: italic;
-      color: var(--teal-dark);
     }
 
     .about-right p {
@@ -460,66 +199,6 @@ nav {
     .about-right p strong {
       color: var(--dark);
       font-weight: 500;
-    }
-
-    .about-partners {
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .partners-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .partners-row {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .partner-badge {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-style: italic;
-      letter-spacing: 0.04em;
-    }
-
-    /* Stats strip */
-    .stats-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-
-    .stat-cell {
-      padding: 2.5rem 2rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: var(--teal-dark);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
     }
 
     /* ============ TOPICS ============ */
@@ -537,9 +216,10 @@ nav {
     }
 
     .topics-header h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--white);
     }
 
@@ -559,7 +239,7 @@ nav {
 
     .topic-card {
       background: var(--dark-2);
-      padding: 2.5rem 2.5rem;
+      padding: 2.5rem;
       position: relative;
       overflow: hidden;
       transition: background 0.3s;
@@ -596,6 +276,7 @@ nav {
     }
 
     .topic-desc {
+      font-family: 'Outfit', sans-serif;
       font-size: 0.8rem;
       line-height: 1.7;
       color: rgba(184,232,154,0.65);
@@ -614,9 +295,10 @@ nav {
     }
 
     .speakers-header h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 3.5vw, 3.5rem);
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--dark);
     }
 
@@ -657,22 +339,22 @@ nav {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal-light), var(--rose-light));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 300;
-      color: var(--dark);
       margin: 0 auto 1.8rem;
       flex-shrink: 0;
+      overflow: hidden;
     }
 
+    .speaker-avatar img { transition: transform 0.4s ease; }
+    .speaker-card:hover .speaker-avatar img { transform: scale(1.05); }
+
     .speaker-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--dark);
       line-height: 1.15;
       margin-bottom: 0.4rem;
@@ -688,6 +370,7 @@ nav {
     }
 
     .speaker-bio {
+      font-family: 'Outfit', sans-serif;
       font-size: 0.82rem;
       line-height: 1.75;
       color: var(--text-body);
@@ -706,15 +389,11 @@ nav {
       font-weight: 400;
     }
 
-  @keyframes modalIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .speaker-card:hover .speaker-avatar img {
-    transform: scale(1.05);
-    transition: transform 0.4s ease;
-  }
-  .speaker-avatar img { transition: transform 0.4s ease; }
+    /* ============ SPEAKER MODAL ============ */
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
     /* ============ VENUE ============ */
     .section-venue {
@@ -730,20 +409,17 @@ nav {
     }
 
     .venue-left h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       line-height: 1.2;
       color: var(--dark);
       margin-bottom: 2rem;
     }
 
-    .venue-left h2 em {
-      font-style: italic;
-      color: var(--rose);
-    }
-
     .venue-left p {
+      font-family: 'Outfit', sans-serif;
       font-size: 0.93rem;
       line-height: 1.85;
       color: var(--text-body);
@@ -777,7 +453,8 @@ nav {
     }
 
     .venue-detail-icon svg {
-      width: 15px; height: 15px;
+      width: 15px;
+      height: 15px;
       fill: var(--teal-dark);
     }
 
@@ -794,99 +471,7 @@ nav {
       display: block;
     }
 
-    .venue-right-visual {
-      position: relative;
-    }
-
-    a:hover .venue-img-overlay {
-      background: linear-gradient(to top, rgba(26,42,26,0.85) 0%, rgba(26,42,26,0.3) 60%);
-    }
-    a:hover .venue-visit-label { opacity: 1; }
-    a:hover img { transform: scale(1.03); }
-
-    .rome-card {
-      background: var(--dark);
-      padding: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .rome-card-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(106,191,75,0.1) 0%, transparent 60%);
-    }
-
-    .rome-large-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 6rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.07);
-      line-height: 1;
-      position: absolute;
-      bottom: -1.5rem;
-      right: 1rem;
-      user-select: none;
-    }
-
-    .rome-header {
-      position: relative;
-      z-index: 1;
-    }
-
-    .rome-tag {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .rome-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.1;
-    }
-
-    .rome-desc {
-      font-size: 0.82rem;
-      color: var(--teal-light);
-      line-height: 1.7;
-      margin-top: 1.2rem;
-      font-weight: 300;
-    }
-
-    .rome-items {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: rgba(106,191,75,0.15);
-      position: relative;
-      z-index: 1;
-    }
-
-    .rome-item {
-      background: rgba(255,255,255,0.03);
-      padding: 1.2rem 1.5rem;
-    }
-
-    .rome-item-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(184,232,154,0.6);
-      margin-bottom: 0.3rem;
-    }
-
-    .rome-item-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--white);
-    }
+    .venue-right-visual { position: relative; }
 
     /* ============ DATES ============ */
     .section-dates {
@@ -900,9 +485,10 @@ nav {
     }
 
     .dates-header h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--dark);
     }
 
@@ -914,7 +500,7 @@ nav {
 
     .date-card {
       border: 1px solid var(--border);
-      padding: 2.5rem 2.5rem;
+      padding: 2.5rem;
       position: relative;
       overflow: hidden;
       transition: border-color 0.3s;
@@ -937,9 +523,9 @@ nav {
       font-weight: 400;
     }
 
-    .status-open { background: rgba(106,191,75,0.1); color: var(--teal-dark); }
+    .status-open     { background: rgba(106,191,75,0.1); color: var(--teal-dark); }
     .status-upcoming { background: var(--rose-pale); color: var(--rose); }
-    .status-tbd { background: #f0f0f0; color: var(--text-muted); }
+    .status-tbd      { background: #f0f0f0; color: var(--text-muted); }
 
     .date-card h3 {
       font-family: 'Cormorant Garamond', serif;
@@ -950,11 +536,11 @@ nav {
     }
 
     .date-card .date-value {
-      font-family: 'Jost', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 0.88rem;
       color: var(--teal-dark);
       font-weight: 400;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
     }
 
     .date-card p {
@@ -976,10 +562,8 @@ nav {
     .section-register::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
+      top: -50%; right: -20%;
+      width: 600px; height: 600px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(106,191,75,0.08) 0%, transparent 70%);
     }
@@ -994,20 +578,17 @@ nav {
     }
 
     .register-left h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2rem, 3.5vw, 3.5rem);
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--white);
       line-height: 1.15;
       margin-bottom: 1.5rem;
     }
 
-    .register-left h2 em {
-      font-style: italic;
-      color: var(--teal-light);
-    }
-
     .register-left p {
+      font-family: 'Outfit', sans-serif;
       font-size: 0.92rem;
       line-height: 1.8;
       color: rgba(184,232,154,0.75);
@@ -1040,9 +621,10 @@ nav {
     }
 
     .fee-price {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 1.5rem;
-      font-weight: 300;
+      font-weight: 400;
+      letter-spacing: 0.05em;
       color: var(--teal-light);
     }
 
@@ -1051,18 +633,21 @@ nav {
       border-left: 2px solid var(--teal);
     }
 
-    /* ============ FOOTER ============ */
-    footer {
-      background: var(--dark);
-      border-top: 1px solid rgba(106,191,75,0.15);
-      padding: 3rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+    .btn {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-decoration: none;
+      padding: 0.85rem 2.2rem;
+      transition: all 0.25s;
     }
 
+    .btn-teal { background: var(--teal); color: var(--white); }
+    .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+    /* ============ FOOTER ============ */
     .footer-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.8rem;
@@ -1111,59 +696,6 @@ nav {
       }
     }
 
-
-    /* === FONT OVERRIDE === */
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-size: clamp(4rem, 7vw, 8rem) !important;
-      font-weight: 400 !important;
-      letter-spacing: 0.04em !important;
-      line-height: 0.95 !important;
-    }
-    .hero-title .highlight, .hero-title .highlight-rose {
-      font-style: normal !important;
-    }
-    body {
-      font-family: 'Outfit', sans-serif !important;
-    }
-    .about-left h2, .topics-header h2, .speakers-header h2,
-    .venue-left h2, .dates-header h2, .register-left h2,
-    .rome-name {
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-weight: 400 !important;
-      letter-spacing: 0.05em !important;
-      font-style: normal !important;
-    }
-    .about-left h2 em, .venue-left h2 em, .register-left h2 em {
-      font-style: normal !important;
-    }
-    .date-card-date {
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-size: 5rem !important;
-      font-weight: 400 !important;
-    }
-    .speaker-name {
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-size: 1.6rem !important;
-      font-weight: 400 !important;
-      letter-spacing: 0.05em !important;
-    }
-    .nav-title {
-      font-family: 'Outfit', sans-serif !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.08em !important;
-    }
-    .stat-num, .fee-price, .info-value, .date-card .date-value {
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-weight: 400 !important;
-      letter-spacing: 0.05em !important;
-    }
-    .hero-subtitle, .about-right p, .venue-left p, .register-left p,
-    .speaker-bio, .topic-desc {
-      font-family: 'Outfit', sans-serif !important;
-      font-weight: 300 !important;
-    }
-
     /* ============ ANIMATIONS ============ */
     .fade-in {
       opacity: 0;
@@ -1179,16 +711,12 @@ nav {
     /* ============ RESPONSIVE ============ */
     @media (max-width: 900px) {
       nav { padding: 1rem 2rem; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 40vh; }
-      .hero-left { padding: 5rem 2rem 4rem; }
-      .about-grid, .venue-grid, .register-grid, .topics-header, .speakers-intro { grid-template-columns: 1fr; gap: 3rem; }
+      .about-grid, .venue-grid, .register-grid, .topics-header { grid-template-columns: 1fr; gap: 3rem; }
       .topics-grid, .speakers-grid { grid-template-columns: 1fr 1fr; }
       .dates-grid { grid-template-columns: 1fr; }
-      .stats-strip { grid-template-columns: 1fr 1fr; }
       .container { padding: 0 1.5rem; }
       .section-about, .section-topics, .section-speakers,
-      .section-venue, .section-dates, .section-register {padding: 3.5rem 0; }
+      .section-venue, .section-dates, .section-register { padding: 3.5rem 0; }
     }
   </style>
 </head>
@@ -1197,13 +725,9 @@ nav {
   <!-- ============ NAV ============ -->
   <nav>
     <a class="nav-logo" href="#">
-      <!-- Inline SVG logo approximating the lotus/ICEM mark -->
       <img src="/images/ICEM_logo.png" alt="ICEM Logo" style="height:44px; object-fit:contain;">
     </a>
-    
-    <!-- pulsante hamburger per mobile -->
     <button class="nav-toggle">&#9776;</button>
-
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#topics">Topics</a></li>
@@ -1219,31 +743,41 @@ nav {
   <!-- ============ HERO ============ -->
   <section style="display:block; min-height:100vh; position:relative; overflow:hidden;">
 
-    <!-- Full bleed background photo -->
+    <!-- Background photo -->
     <div style="position:absolute; inset:0; background:url('/images/main_sfondo.jpg') center 40%/cover no-repeat;"></div>
 
     <!-- Gradient overlay -->
-    <div style="position:absolute; inset:0;
+    <div style="
+      position:absolute; inset:0;
       background:
         linear-gradient(to right, rgba(26,42,26,0.85) 0%, rgba(26,42,26,0.55) 55%, rgba(26,42,26,0.2) 100%),
         linear-gradient(to top, rgba(26,42,26,0.6) 0%, transparent 45%);
     "></div>
 
     <!-- Content -->
-    <div style="position:relative; z-index:2; min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding: clamp(6rem, 8vw, 9rem) clamp(1.5rem, 5vw, 6rem) 4rem;; max-width:750px;">
+    <div style="
+      position:relative; z-index:2;
+      min-height:100vh;
+      display:flex; flex-direction:column; justify-content:center;
+      padding: clamp(6rem, 8vw, 9rem) clamp(1.5rem, 5vw, 6rem) 4rem;
+      max-width:750px;
+    ">
       <span style="display:inline-flex; align-items:center; gap:0.6rem; font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:2.5rem;">
         <span style="display:block; width:24px; height:1px; background:var(--teal);"></span>
         2nd Edition · Rome 2026
       </span>
+
       <h1 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(4rem,7vw,8rem); font-weight:400; letter-spacing:0.04em; line-height:0.95; color:#ffffff;">
         International<br>
         Conference on<br>
         <span style="color:var(--teal);">Environmental</span><br>
         <span style="color:var(--rose);">Mindfulness</span>
       </h1>
+
       <p style="font-family:'Outfit',sans-serif; font-size:1rem; line-height:1.75; color:rgba(255,255,255,0.82); max-width:480px; font-weight:300; margin-top:2rem; margin-bottom:3rem;">
         Bringing together researchers in environmental psychology, mindfulness, neuropsychology, and contemplative studies to shape the scientific agenda for sustainable futures.
       </p>
+
       <div style="display:flex; gap:2.5rem; flex-wrap:wrap; margin-bottom:3rem;">
         <div>
           <span style="display:block; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:0.2rem;">Dates</span>
@@ -1258,9 +792,10 @@ nav {
           <span style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:#fff; letter-spacing:0.05em;">In person + Virtual</span>
         </div>
       </div>
+
       <div style="display:flex; gap:1rem; flex-wrap:wrap;">
         <a href="#register" style="display:inline-block; padding:0.9rem 2.2rem; background:var(--teal); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s;">Register Now</a>
-        <a href="#about" style="display:inline-block; padding:0.9rem 2.2rem; border:1.5px solid rgba(255,255,255,0.35); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif;">Learn More</a>
+        <a href="#about"    style="display:inline-block; padding:0.9rem 2.2rem; border:1.5px solid rgba(255,255,255,0.35); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif;">Learn More</a>
       </div>
     </div>
 
@@ -1269,23 +804,25 @@ nav {
       <span>Scroll</span>
       <div style="width:1px; height:40px; background:linear-gradient(to bottom, var(--teal), transparent); animation:scrollPulse 2s infinite;"></div>
     </a>
+
   </section>
 
   <!-- ============ ABOUT ============ -->
   <section class="section-about" id="about">
     <div class="container">
       <div class="about-grid">
+
         <div class="about-left fade-in">
           <div class="section-tag">About ICEM</div>
-          <h2>Where <em>science</em> and contemplation meet</h2>
+          <h2>Where science and contemplation meet</h2>
         </div>
+
         <div class="about-right fade-in">
           <p>ICEM is an international forum dedicated to exploring the intersection of <strong>mindfulness practice</strong> and <strong>environmental behavior</strong>. Building on the success of the first edition (Rome, November 2023), the 2026 conference continues to bridge the scientific communities of mindfulness research and environmental psychology.</p>
           <p>With a focus on how inner transformation can drive sustainable action, ICEM brings together researchers, practitioners, and policymakers. Each day of the conference begins and closes with a guided meditation on interconnectedness, ecology, and human–nature interaction.</p>
           <p>Keynote lectures from leading experts are paired with talks from contemplative practitioners within the same sessions — a unique format that has made ICEM a distinctive voice in the global mindfulness and sustainability conversation.</p>
-
         </div>
-      </div>
+
       </div>
     </div>
   </section>
@@ -1293,10 +830,12 @@ nav {
   <!-- ============ TOPICS ============ -->
   <section class="section-topics" id="topics">
     <div class="container">
+
       <div class="topics-header">
-        <h2 class="fade-in">Conference <em style="font-style:italic; color: var(--teal-light);">Topics</em></h2>
+        <h2 class="fade-in">Conference <em style="font-style:italic; color:var(--teal-light);">Topics</em></h2>
         <p class="fade-in">The conference welcomes submissions across a wide range of intersecting themes connecting psychology, mindfulness, and environmental sustainability — from empirical research in environmental psychology to contemplative and applied approaches.</p>
       </div>
+
       <div class="topics-grid">
         <div class="topic-card fade-in">
           <div class="topic-num">01</div>
@@ -1315,7 +854,7 @@ nav {
         </div>
         <div class="topic-card fade-in">
           <div class="topic-num">04</div>
-          <div class="topic-title">Climate Psychology &amp; Ecomindfulness </div>
+          <div class="topic-title">Climate Psychology &amp; Ecomindfulness</div>
           <p class="topic-desc">Eco-anxiety, climate grief, psychological adaptation, and the role of contemplative and psychological practice in building resilience.</p>
         </div>
         <div class="topic-card fade-in">
@@ -1329,99 +868,116 @@ nav {
           <p class="topic-desc">Design and evaluation of mindfulness-based and nature-based interventions in educational, clinical, and community contexts.</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ============ SPEAKERS ============ -->
-<section class="section-speakers" id="speakers">
-  <div class="container">
-    <div class="speakers-header fade-in">
-      <div class="section-tag" style="justify-content: center;">Invited Speakers</div>
-      <h2>Keynote <em style="font-style:italic; color: var(--teal-dark);">Speakers</em></h2>
-      <p>Distinguished voices from philosophy, psychology, sustainability science, and contemplative studies</p>
+  <section class="section-speakers" id="speakers">
+    <div class="container">
+
+      <div class="speakers-header fade-in">
+        <div class="section-tag" style="justify-content:center;">Invited Speakers</div>
+        <h2>Keynote <em style="font-style:italic; color:var(--teal-dark);">Speakers</em></h2>
+        <p>Distinguished voices from philosophy, psychology, sustainability science, and contemplative studies</p>
+      </div>
+
+      <div class="speakers-grid">
+
+        <div class="speaker-card fade-in" onclick="openSpeaker('loy')" style="cursor:pointer;">
+          <div class="speaker-avatar">
+            <img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          </div>
+          <div class="speaker-name">David Loy</div>
+          <div class="speaker-role">Philosopher · Author</div>
+          <p class="speaker-bio">A leading voice at the intersection of Zen Buddhism and social thought, David Loy has written extensively on ecological crisis, the role of inner transformation in addressing environmental challenges, and Buddhist perspectives on sustainability.</p>
+          <span class="speaker-focus">Buddhism &amp; Ecology</span>
+          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
+        </div>
+
+        <div class="speaker-card fade-in" onclick="openSpeaker('wamsler')" style="cursor:pointer;">
+          <div class="speaker-avatar">
+            <img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          </div>
+          <div class="speaker-name">Christine Wamsler</div>
+          <div class="speaker-role">Professor · Lund University</div>
+          <p class="speaker-bio">Professor at Lund University's Centre for Sustainability Studies, Christine Wamsler's research explores the links between mindfulness, inner development, and sustainability transformations, pioneering the field of contemplative sustainability science.</p>
+          <span class="speaker-focus">Inner Sustainability</span>
+          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
+        </div>
+
+        <div class="speaker-card fade-in" onclick="openSpeaker('labranche')" style="cursor:pointer;">
+          <div class="speaker-avatar">
+            <img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          </div>
+          <div class="speaker-name">Stéphane Labranche</div>
+          <div class="speaker-role">Researcher · Social Sciences</div>
+          <p class="speaker-bio">Stéphane Labranche is an independent sociologist and IPCC expert reviewer specializing in climate, energy, and biodiversity transitions, with over 50 research projects informing national and territorial climate strategies across France.</p>
+          <span class="speaker-focus">Climate Behavior</span>
+          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
+        </div>
+
+      </div>
     </div>
-    <div class="speakers-grid">
+  </section>
 
-      <div class="speaker-card fade-in" onclick="openSpeaker('loy')" style="cursor:pointer;">
-        <div class="speaker-avatar" style="background:none; overflow:hidden;">
-          <img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+  <!-- ============ SPEAKER MODAL ============ -->
+  <div id="speakerModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,20,10,0.82); backdrop-filter:blur(6px); overflow-y:auto;" onclick="closeModalOnBackdrop(event)">
+    <div id="speakerModalInner" style="max-width:740px; margin:5vh auto 5vh; background:var(--dark); border:1px solid rgba(106,191,75,0.2); position:relative; animation:modalIn 0.3s ease;">
+
+      <!-- Close button -->
+      <button onclick="closeSpeaker()" style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(106,191,75,0.1); border:1px solid rgba(106,191,75,0.25); color:var(--teal-light); width:38px; height:38px; border-radius:50%; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background 0.2s;"
+        onmouseover="this.style.background='rgba(106,191,75,0.2)'" onmouseout="this.style.background='rgba(106,191,75,0.1)'">✕</button>
+
+      <!-- Header -->
+      <div id="modalHeader" style="padding:3rem 3rem 2rem; border-bottom:1px solid rgba(106,191,75,0.12); display:flex; align-items:flex-start; gap:2rem; flex-wrap:wrap;">
+        <img id="modalImg" src="" alt="" style="width:100px; height:100px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid rgba(106,191,75,0.3);">
+        <div style="flex:1; min-width:200px;">
+          <div id="modalTag"  style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:0.6rem;"></div>
+          <div id="modalName" style="font-family:'Bebas Neue',sans-serif; font-size:2.8rem; color:#fff; letter-spacing:0.04em; line-height:1;"></div>
+          <div id="modalRole" style="font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-top:0.5rem; font-weight:400;"></div>
+          <span id="modalFocus" style="display:inline-block; margin-top:1rem; padding:0.3rem 0.9rem; background:var(--rose-pale); color:var(--rose); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;"></span>
         </div>
-        <div class="speaker-name">David Loy</div>
-        <div class="speaker-role">Philosopher · Author</div>
-        <p class="speaker-bio">A leading voice at the intersection of Zen Buddhism and social thought, David Loy has written extensively on ecological crisis, the role of inner transformation in addressing environmental challenges, and Buddhist perspectives on sustainability.</p>
-        <span class="speaker-focus">Buddhism &amp; Ecology</span>
-        <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
       </div>
 
-      <div class="speaker-card fade-in" onclick="openSpeaker('wamsler')" style="cursor:pointer;">
-        <div class="speaker-avatar" style="background:none; overflow:hidden;">
-          <img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-        </div>
-        <div class="speaker-name">Christine Wamsler</div>
-        <div class="speaker-role">Professor · Lund University</div>
-        <p class="speaker-bio">Professor at Lund University's Centre for Sustainability Studies, Christine Wamsler's research explores the links between mindfulness, inner development, and sustainability transformations, pioneering the field of contemplative sustainability science.</p>
-        <span class="speaker-focus">Inner Sustainability</span>
-        <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
-      </div>
-
-      <div class="speaker-card fade-in" onclick="openSpeaker('labranche')" style="cursor:pointer;">
-        <div class="speaker-avatar" style="background:none; overflow:hidden;">
-          <img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-        </div>
-        <div class="speaker-name">Stéphane Labranche</div>
-        <div class="speaker-role">Researcher · Social Sciences</div>
-        <p class="speaker-bio">Stéphane Labranche is an independent sociologist and IPCC expert reviewer specializing in climate, energy, and biodiversity transitions, with over 50 research projects informing national and territorial climate strategies across France.</p>
-        <span class="speaker-focus">Climate Behavior</span>
-        <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
-      </div>
+      <!-- Body -->
+      <div id="modalBody" style="padding:2.5rem 3rem 3rem; font-family:'Outfit',sans-serif; font-size:0.92rem; line-height:1.9; color:rgba(255,255,255,0.75); font-weight:300;"></div>
 
     </div>
   </div>
-</section>
-
-<!-- ============ SPEAKER MODAL ============ -->
-<div id="speakerModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,20,10,0.82); backdrop-filter:blur(6px); overflow-y:auto;" onclick="closeModalOnBackdrop(event)">
-  <div id="speakerModalInner" style="max-width:740px; margin:5vh auto 5vh; background:var(--dark); border:1px solid rgba(106,191,75,0.2); position:relative; animation:modalIn 0.3s ease;">
-
-    <!-- Close button -->
-    <button onclick="closeSpeaker()" style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(106,191,75,0.1); border:1px solid rgba(106,191,75,0.25); color:var(--teal-light); width:38px; height:38px; border-radius:50%; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background 0.2s;"
-      onmouseover="this.style.background='rgba(106,191,75,0.2)'" onmouseout="this.style.background='rgba(106,191,75,0.1)'">✕</button>
-
-    <!-- Header band -->
-    <div id="modalHeader" style="padding:3rem 3rem 2rem; border-bottom:1px solid rgba(106,191,75,0.12); display:flex; align-items:flex-start; gap:2rem; flex-wrap:wrap;">
-      <img id="modalImg" src="" alt="" style="width:100px; height:100px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid rgba(106,191,75,0.3);">
-      <div style="flex:1; min-width:200px;">
-        <div id="modalTag" style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:0.6rem;"></div>
-        <div id="modalName" style="font-family:'Bebas Neue',sans-serif; font-size:2.8rem; color:#fff; letter-spacing:0.04em; line-height:1;"></div>
-        <div id="modalRole" style="font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-top:0.5rem; font-weight:400;"></div>
-        <span id="modalFocus" style="display:inline-block; margin-top:1rem; padding:0.3rem 0.9rem; background:var(--rose-pale); color:var(--rose); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;"></span>
-      </div>
-    </div>
-
-    <!-- Body -->
-    <div id="modalBody" style="padding:2.5rem 3rem 3rem; font-family:'Outfit',sans-serif; font-size:0.92rem; line-height:1.9; color:rgba(255,255,255,0.75); font-weight:300;"></div>
-  </div>
-</div>
 
   <!-- ============ VENUE ============ -->
   <section class="section-venue" id="venue">
     <div class="container">
       <div class="venue-grid">
+
         <div class="venue-left fade-in">
           <div class="section-tag">Venue</div>
-          <h2>UNINT,<br><em>Rome</em></h2>
+          <h2>UNINT, Rome</h2>
           <p>The 2nd ICEM will be hosted at UNINT — Università degli Studi Internazionali di Roma — a dynamic international university in the heart of Rome, dedicated to dialogue between cultures, disciplines, and traditions.</p>
           <p>Rome's unique position as a crossroads of history, spirituality, and contemporary culture makes it the perfect backdrop for a conference on environmental mindfulness — a city where ancient contemplative wisdom and modern science have long coexisted.</p>
+
           <div class="venue-details-list">
+
+            <!-- Address + Google Maps -->
             <div class="venue-detail-row">
               <div class="venue-detail-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               </div>
               <div class="venue-detail-text">
                 <strong>UNINT – Università degli Studi Internazionali di Roma</strong>
-                Via Cristoforo Colombo, Rome, Italy
+                Via Cristoforo Colombo 200, 00147 Rome, Italy
+                <a href="https://maps.google.com/?q=UNINT+Università+degli+Studi+Internazionali+di+Roma,+Via+Cristoforo+Colombo+200,+Roma"
+                  target="_blank" rel="noopener"
+                  style="display:inline-flex; align-items:center; gap:0.3rem; margin-top:0.4rem; font-size:0.78rem; color:var(--teal-dark); text-decoration:none; transition:color 0.2s;"
+                  onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--teal-dark)'">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  Open in Google Maps →
+                </a>
               </div>
             </div>
+
+            <!-- Online participation -->
             <div class="venue-detail-row">
               <div class="venue-detail-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
@@ -1431,6 +987,8 @@ nav {
                 Online participation available for remote attendees
               </div>
             </div>
+
+            <!-- Dates -->
             <div class="venue-detail-row">
               <div class="venue-detail-icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
@@ -1440,31 +998,36 @@ nav {
                 Three days of keynotes, sessions, and guided meditations
               </div>
             </div>
+
+            <!-- Website link -->
             <div style="padding-top:0.5rem;">
-  <a href="https://www.unint.eu" target="_blank" rel="noopener"
-    style="font-size:1rem; color:var(--teal-dark); text-decoration:none; letter-spacing:0.06em; display:inline-flex; align-items:center; gap:0.6rem; transition:color 0.2s;"
-    onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--teal-dark)'">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-    www.unint.eu
-  </a>
-</div>
+              <a href="https://www.unint.eu" target="_blank" rel="noopener"
+                style="font-size:1rem; color:var(--teal-dark); text-decoration:none; letter-spacing:0.06em; display:inline-flex; align-items:center; gap:0.6rem; transition:color 0.2s;"
+                onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--teal-dark)'">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                www.unint.eu
+              </a>
+            </div>
+
           </div>
         </div>
 
+        <!-- Venue photo -->
         <div class="venue-right-visual fade-in">
-  <a href="https://www.unint.eu" target="_blank" rel="noopener" style="display:block; position:relative; overflow:hidden; height:420px; text-decoration:none;">
-    <img src="/images/unint_venue.jpg" alt="UNINT University, Rome" 
-      style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
-    <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26,42,26,0.6) 0%, transparent 50%); transition:background 0.3s;"></div>
-    <div style="position:absolute; bottom:2rem; left:2rem; right:2rem; display:flex; justify-content:space-between; align-items:flex-end;">
-      <div>
-        <span style="display:block; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:0.4rem;">Conference Venue</span>
-        <span style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#fff; letter-spacing:0.05em;">UNINT, Rome</span>
-      </div>
-      <span id="venueVisitLabel" style="font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-light); opacity:0; transition:opacity 0.3s; white-space:nowrap;">Visit website →</span>
-    </div>
-  </a>
-</div>
+          <a href="https://www.unint.eu" target="_blank" rel="noopener" style="display:block; position:relative; overflow:hidden; height:420px; text-decoration:none;">
+            <img src="/images/unint_venue.jpg" alt="UNINT University, Rome"
+              style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease;">
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(26,42,26,0.6) 0%, transparent 50%); transition:background 0.3s;"></div>
+            <div style="position:absolute; bottom:2rem; left:2rem; right:2rem; display:flex; justify-content:space-between; align-items:flex-end;">
+              <div>
+                <span style="display:block; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:0.4rem;">Conference Venue</span>
+                <span style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#fff; letter-spacing:0.05em;">UNINT, Rome</span>
+              </div>
+              <span id="venueVisitLabel" style="font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-light); opacity:0; transition:opacity 0.3s; white-space:nowrap;">Visit website →</span>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1472,10 +1035,12 @@ nav {
   <!-- ============ DATES ============ -->
   <section class="section-dates" id="dates">
     <div class="container">
+
       <div class="dates-header fade-in">
-        <div class="section-tag" style="justify-content: center;">Key Dates</div>
-        <h2>Important <em style="font-style:italic; color: var(--rose);">Deadlines</em></h2>
+        <div class="section-tag" style="justify-content:center;">Key Dates</div>
+        <h2>Important <em style="font-style:italic; color:var(--rose);">Deadlines</em></h2>
       </div>
+
       <div class="dates-grid">
         <div class="date-card fade-in">
           <div class="date-card-top">
@@ -1502,6 +1067,7 @@ nav {
           <p>Three days of keynote lectures, parallel sessions, contemplative practices, and interdisciplinary dialogue at UNINT, Rome.</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -1509,12 +1075,16 @@ nav {
   <section class="section-register" id="register">
     <div class="container">
       <div class="register-grid">
+
         <div class="register-left fade-in">
-          <div class="section-tag" style="color: var(--teal-light);">Registration</div>
-          <h2>Join us in <em>Rome</em><br>— in person<br>or virtually</h2>
+          <div class="section-tag" style="color:var(--teal-light);">Registration</div>
+          <h2>Join us in Rome — in person or virtually</h2>
           <p>ICEM is committed to accessibility and offers multiple registration tiers to ensure researchers worldwide can participate, including a dedicated virtual listener option for remote attendees. Early registration comes at a reduced fee for all!</p>
-          <a href="#contact" onclick="setTimeout(()=>{document.querySelector('[name=subject]').value='Newsletter subscription';document.querySelector('[name=message]').value='Please add me to the ICEM 2026 mailing list.';},100)" class="btn btn-teal">Stay Updated</a>
+          <a href="#contact"
+            onclick="setTimeout(()=>{document.querySelector('[name=subject]').value='Newsletter subscription';document.querySelector('[name=message]').value='Please add me to the ICEM 2026 mailing list.';},100)"
+            class="btn btn-teal">Stay Updated</a>
         </div>
+
         <div class="register-right fade-in">
           <div class="fee-row featured">
             <span class="fee-label">Academic / Standard</span>
@@ -1533,45 +1103,33 @@ nav {
             <span class="fee-price">Reduced fee</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-      <!-- ============ PARTNERS ============ -->
-  <section style="padding: 4rem 0; background: #FFFFFF; border-top: 1px solid var(--border);">
+  <!-- ============ PARTNERS ============ -->
+  <section style="padding:4rem 0; background:#ffffff; border-top:1px solid var(--border);">
     <div class="container">
       <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); text-align:center; margin-bottom:4rem;">Organizers &amp; Partners</p>
       <div style="display:flex; flex-wrap:wrap; gap:4rem; align-items:center; justify-content:center;">
-        <a href="https://www.unint.eu" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_signature.png" alt="UNINT" style="height:80px; object-fit:contain;">
-        </a>
-        <a href="https://www.uniroma1.it" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_sapienza.jpg" alt="Sapienza" style="height:80px; object-fit:contain;">
-        </a>
-        <a href="https://aipass.org" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_AIP.jpg" alt="AIP" style="height:80px; object-fit:contain;">
-        </a>
-        <a href="https://mindandlife-europe.org" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_MLE.jpg" alt="Mind &amp; Life Europe" style="height:100px; object-fit:contain;">
-        </a>
-        <a href="https://unionebuddhistaitaliana.it/en/" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_UBI.jpg" alt="Unione Buddhista Italiana" style="height:80px; object-fit:contain;">
-        </a>
-        <a href="https://www.italiamindfulness.it" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_italiamindfulness.jpg" alt="Italia Mindfulness" style="height:90px; object-fit:contain;">
-        </a>
-        <a href="https://innerdevelopmentgoals.org" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
-          <img src="/images/logo_inner.jpg" alt="Inner Development Goals" style="height:80px; object-fit:contain;">
-        </a>
+        <a href="https://www.unint.eu"                  target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_signature.png"        alt="UNINT"                   style="height:80px;  object-fit:contain;"></a>
+        <a href="https://www.uniroma1.it"               target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_sapienza.jpg"        alt="Sapienza"                style="height:80px;  object-fit:contain;"></a>
+        <a href="https://aipass.org"                    target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_AIP.jpg"              alt="AIP"                     style="height:80px;  object-fit:contain;"></a>
+        <a href="https://mindandlife-europe.org"         target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_MLE.jpg"              alt="Mind &amp; Life Europe"  style="height:100px; object-fit:contain;"></a>
+        <a href="https://unionebuddhistaitaliana.it/en/" target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_UBI.jpg"              alt="Unione Buddhista Italiana" style="height:80px; object-fit:contain;"></a>
+        <a href="https://www.italiamindfulness.it"       target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_italiamindfulness.jpg" alt="Italia Mindfulness"       style="height:90px;  object-fit:contain;"></a>
+        <a href="https://innerdevelopmentgoals.org"      target="_blank" rel="noopener" style="display:flex; align-items:center; opacity:0.85; transition:opacity 0.2s; text-decoration:none;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><img src="/images/logo_inner.jpg"            alt="Inner Development Goals" style="height:80px;  object-fit:contain;"></a>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section style="padding: 4.5rem 0; background: var(--dark);">
+  <section id="contact" style="padding:4.5rem 0; background:var(--dark);">
     <div class="container">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:3rem; align-items:start;">
 
+        <!-- Contact info -->
         <div>
           <div class="section-tag" style="color:var(--teal-light);">Contact Us</div>
           <h2 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,4vw,4rem); color:#fff; letter-spacing:0.05em; margin-bottom:1.5rem; line-height:1;">Get in Touch</h2>
@@ -1600,6 +1158,7 @@ nav {
           </div>
         </div>
 
+        <!-- Contact form -->
         <div>
           <form id="contactForm" action="https://formspree.io/f/xeelvebl" method="POST" style="display:flex; flex-direction:column; gap:1rem;">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
@@ -1646,27 +1205,28 @@ nav {
     </div>
   </section>
 
-<!-- ============ PAST EDITIONS ============ -->
-<section style="padding: 4rem 0; background: var(--dark-2); border-top: 1px solid rgba(106,191,75,0.12);">
-  <div class="container">
-    <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(184,232,154,0.5); margin-bottom:2rem;">Past Editions</p>
-    <a href="icem2023.html" style="display:flex; align-items:center; justify-content:space-between; padding:2rem 2.5rem; background:rgba(255,255,255,0.03); border:1px solid rgba(106,191,75,0.15); text-decoration:none; transition:background 0.25s; max-width:640px;"
-      onmouseover="this.style.background='rgba(106,191,75,0.07)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
-      <div>
-        <span style="display:block; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(184,232,154,0.5); margin-bottom:0.4rem;">1st Edition · Rome</span>
-        <span style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:#fff; letter-spacing:0.05em;">ICEM 2023</span>
-        <span style="display:block; font-size:0.8rem; color:rgba(184,232,154,0.6); margin-top:0.3rem; font-weight:300;">13–16 November · Aula Marconi, CNR</span>
-      </div>
-      <span style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.1em; color:var(--teal); margin-left:2rem;">View →</span>
-    </a>
-  </div>
-</section>
+  <!-- ============ PAST EDITIONS ============ -->
+  <section style="padding:4rem 0; background:var(--dark-2); border-top:1px solid rgba(106,191,75,0.12);">
+    <div class="container">
+      <p style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(184,232,154,0.5); margin-bottom:2rem;">Past Editions</p>
+      <a href="icem2023.html"
+        style="display:flex; align-items:center; justify-content:space-between; padding:2rem 2.5rem; background:rgba(255,255,255,0.03); border:1px solid rgba(106,191,75,0.15); text-decoration:none; transition:background 0.25s; max-width:640px;"
+        onmouseover="this.style.background='rgba(106,191,75,0.07)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
+        <div>
+          <span style="display:block; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(184,232,154,0.5); margin-bottom:0.4rem;">1st Edition · Rome</span>
+          <span style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:#fff; letter-spacing:0.05em;">ICEM 2023</span>
+          <span style="display:block; font-size:0.8rem; color:rgba(184,232,154,0.6); margin-top:0.3rem; font-weight:300;">13–16 November · Aula Marconi, CNR</span>
+        </div>
+        <span style="font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.1em; color:var(--teal); margin-left:2rem;">View →</span>
+      </a>
+    </div>
+  </section>
 
   <!-- ============ FOOTER ============ -->
   <footer style="display:block; padding:0;">
 
     <!-- Newsletter strip -->
-    <div style="background:var(--teal); padding: 2rem clamp(1rem, 5vw, 4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+    <div style="background:var(--teal); padding:2rem clamp(1rem,5vw,4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
       <div>
         <span style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:#fff; letter-spacing:0.06em;">Stay Updated</span>
         <p style="font-size:0.8rem; color:rgba(255,255,255,0.8); margin-top:0.2rem; font-weight:300;">Subscribe to our newsletter for conference updates, deadlines and news.</p>
@@ -1685,135 +1245,133 @@ nav {
     </div>
 
     <!-- Main footer -->
-    <div style="background:var(--dark); border-top:1px solid rgba(106,191,75,0.15); padding: 2.5rem clamp(1rem, 5vw, 4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-sizing:border-box; max-width:100%">
-    <div class="footer-logo">ICEM 2026 · International Conference on Environmental Mindfulness</div>
-    <ul class="footer-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#topics">Topics</a></li>
-      <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#venue">Venue</a></li>
-      <li><a href="#register">Register</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="footer-contact">
-      <a href="mailto:icemindfulness@gmail.com">icemindfulness@gmail.com</a>
-      &nbsp;·&nbsp; www.environmentalmindfulness.org
-    </div>
+    <div style="background:var(--dark); border-top:1px solid rgba(106,191,75,0.15); padding:2.5rem clamp(1rem,5vw,4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-sizing:border-box; max-width:100%;">
+      <div class="footer-logo">ICEM 2026 · International Conference on Environmental Mindfulness</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-contact">
+        <a href="mailto:icemindfulness@gmail.com">icemindfulness@gmail.com</a>
+        &nbsp;·&nbsp; www.environmentalmindfulness.org
       </div>
+    </div>
+
   </footer>
 
-    <script>
+  <!-- ============ SCRIPTS ============ -->
+
+  <script>
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.nav-toggle');
-      const links = document.querySelector('.nav-links');
-      toggle.addEventListener('click', () => {
-        links.classList.toggle('show');
-      });
-      links.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => links.classList.remove('show'));
-      });
+      const links  = document.querySelector('.nav-links');
+      toggle.addEventListener('click', () => links.classList.toggle('show'));
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('show')));
     });
   </script>
 
-<script>
-  const speakers = {
-    loy: {
-      name: 'David Loy',
-      role: 'Philosopher · Author · Zen Teacher',
-      tag: 'Keynote Speaker',
-      focus: 'Buddhism & Ecology',
-      img: '/images/loy.jpg',
-      bio: `
-        <p>David Robert Loy is a professor, writer, and Zen teacher in the Sanbo Zen tradition of Japanese Zen Buddhism. A scholar of Buddhist and comparative philosophy, he holds a PhD from the National University of Singapore and has held academic positions at institutions across Asia, North America, and Europe.</p>
-        <p>His work focuses on the encounter between Buddhism and modernity, with a particular emphasis on social and ecological issues. He is a prolific author whose books and essays have been translated into many languages and appear regularly in publications such as <em>Tricycle</em>, <em>Lion's Roar</em>, and <em>Tikkun</em>.</p>
-        <p>His latest book, <em>Ecodharma: Buddhist Teachings for the Ecological Crisis</em> (2019), reflects his deep commitment to exploring Buddhist responses to the environmental emergency. He lectures and leads meditation retreats internationally, and is a founding member of the Rocky Mountain Ecodharma Retreat Center near Boulder, Colorado.</p>
-        <p>He serves on the advisory boards of Buddhist Global Relief, the Clear View Project, Zen Peacemakers, and the Ernest Becker Foundation.</p>
-      `
-    },
-    wamsler: {
-      name: 'Christine Wamsler',
-      role: 'Professor · Lund University',
-      tag: 'Keynote Speaker',
-      focus: 'Inner Sustainability',
-      img: '/images/wamsler.jpg',
-      bio: `
-        <p>Christine Wamsler is Professor of Sustainability Science and Director of the Contemplative Sustainable Futures Program at Lund University, the world's leading university in sustainability (QS World University Rankings). She is ranked among the 6th most influential scholars in ecology, earth, and environmental sciences globally (Stanford–Elsevier Top 2% Scientists).</p>
-        <p>A leading expert in the emerging field of inner transformation, mindfulness and sustainability, Christine has co-developed theories, approaches, leadership training, and educational programs in these areas. She has published more than 200 academic articles, book chapters, and books.</p>
-        <p>She serves as Senior Scientific Advisor to the Inner Development Goals (IDG) Initiative, the UNDP Conscious Food Systems Alliance, the Office of the United Nations High Commissioner for Human Rights (OHCHR) and its Mindfulness Initiative, the Global Compassion Coalition, and the Inner Green Deal, among others.</p>
-        <p>Christine's workplace, the Lund University Centre for Sustainability Studies (LUCSUS), is a renowned interdisciplinary centre for research, teaching and impact, and a founding organization of the IDG Initiative as well as the Global University Coalition for Student Inner Development for Societal Change.</p>
-      `
-    },
-    labranche: {
-      name: 'Stéphane Labranche',
-      role: 'Independent Sociologist · IPCC Expert Reviewer',
-      tag: 'Keynote Speaker',
-      focus: 'Climate Behavior',
-      img: '/images/labranche.jpg',
-      bio: `
-        <p>Stéphane La Branche is an independent sociologist specializing in transition issues and the GIECO/IPBC scientific coordinator. His research — spanning more than 50 completed or ongoing projects — focuses on the obstacles and drivers of changes in practices, perceptions, and social representations regarding climate change, energy, and biodiversity.</p>
-        <p>As an invited expert in France's Energy Transition Law process and in the drafting of three national adaptation strategy documents on climate change, he has contributed to the development of several national and territorial climate strategies. His research in the Human and Social Sciences of energy and climate earned him a nomination as an expert reviewer for the IPCC.</p>
-        <p>The results of his research have been integrated into transition policies and strategies — covering mobility, energy, urban planning, and information and support campaigns — for private operators, companies, public bodies, and associations, as well as lifestyle 2050 prospective scenarios.</p>
-      `
+  <script>
+    // Speaker modal data
+    const speakers = {
+      loy: {
+        name:  'David Loy',
+        role:  'Philosopher · Author · Zen Teacher',
+        tag:   'Keynote Speaker',
+        focus: 'Buddhism & Ecology',
+        img:   '/images/loy.jpg',
+        bio: `
+          <p>David Robert Loy is a professor, writer, and Zen teacher in the Sanbo Zen tradition of Japanese Zen Buddhism. A scholar of Buddhist and comparative philosophy, he holds a PhD from the National University of Singapore and has held academic positions at institutions across Asia, North America, and Europe.</p>
+          <p>His work focuses on the encounter between Buddhism and modernity, with a particular emphasis on social and ecological issues. He is a prolific author whose books and essays have been translated into many languages and appear regularly in publications such as <em>Tricycle</em>, <em>Lion's Roar</em>, and <em>Tikkun</em>.</p>
+          <p>His latest book, <em>Ecodharma: Buddhist Teachings for the Ecological Crisis</em> (2019), reflects his deep commitment to exploring Buddhist responses to the environmental emergency. He lectures and leads meditation retreats internationally, and is a founding member of the Rocky Mountain Ecodharma Retreat Center near Boulder, Colorado.</p>
+          <p>He serves on the advisory boards of Buddhist Global Relief, the Clear View Project, Zen Peacemakers, and the Ernest Becker Foundation.</p>
+        `
+      },
+      wamsler: {
+        name:  'Christine Wamsler',
+        role:  'Professor · Lund University',
+        tag:   'Keynote Speaker',
+        focus: 'Inner Sustainability',
+        img:   '/images/wamsler.jpg',
+        bio: `
+          <p>Christine Wamsler is Professor of Sustainability Science and Director of the Contemplative Sustainable Futures Program at Lund University, the world's leading university in sustainability (QS World University Rankings). She is ranked among the 6th most influential scholars in ecology, earth, and environmental sciences globally (Stanford–Elsevier Top 2% Scientists).</p>
+          <p>A leading expert in the emerging field of inner transformation, mindfulness and sustainability, Christine has co-developed theories, approaches, leadership training, and educational programs in these areas. She has published more than 200 academic articles, book chapters, and books.</p>
+          <p>She serves as Senior Scientific Advisor to the Inner Development Goals (IDG) Initiative, the UNDP Conscious Food Systems Alliance, the Office of the United Nations High Commissioner for Human Rights (OHCHR) and its Mindfulness Initiative, the Global Compassion Coalition, and the Inner Green Deal, among others.</p>
+          <p>Christine's workplace, the Lund University Centre for Sustainability Studies (LUCSUS), is a renowned interdisciplinary centre for research, teaching and impact, and a founding organization of the IDG Initiative as well as the Global University Coalition for Student Inner Development for Societal Change.</p>
+        `
+      },
+      labranche: {
+        name:  'Stéphane Labranche',
+        role:  'Independent Sociologist · IPCC Expert Reviewer',
+        tag:   'Keynote Speaker',
+        focus: 'Climate Behavior',
+        img:   '/images/labranche.jpg',
+        bio: `
+          <p>Stéphane La Branche is an independent sociologist specializing in transition issues and the GIECO/IPBC scientific coordinator. His research — spanning more than 50 completed or ongoing projects — focuses on the obstacles and drivers of changes in practices, perceptions, and social representations regarding climate change, energy, and biodiversity.</p>
+          <p>As an invited expert in France's Energy Transition Law process and in the drafting of three national adaptation strategy documents on climate change, he has contributed to the development of several national and territorial climate strategies. His research in the Human and Social Sciences of energy and climate earned him a nomination as an expert reviewer for the IPCC.</p>
+          <p>The results of his research have been integrated into transition policies and strategies — covering mobility, energy, urban planning, and information and support campaigns — for private operators, companies, public bodies, and associations, as well as lifestyle 2050 prospective scenarios.</p>
+        `
+      }
+    };
+
+    function openSpeaker(id) {
+      const s = speakers[id];
+      if (!s) return;
+      document.getElementById('modalImg').src          = s.img;
+      document.getElementById('modalImg').alt          = s.name;
+      document.getElementById('modalTag').textContent  = s.tag;
+      document.getElementById('modalName').textContent = s.name;
+      document.getElementById('modalRole').textContent = s.role;
+      document.getElementById('modalFocus').textContent = s.focus;
+      document.getElementById('modalBody').innerHTML   = s.bio;
+      document.getElementById('speakerModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
     }
-  };
 
-  function openSpeaker(id) {
-    const s = speakers[id];
-    if (!s) return;
-    document.getElementById('modalImg').src = s.img;
-    document.getElementById('modalImg').alt = s.name;
-    document.getElementById('modalTag').textContent = s.tag;
-    document.getElementById('modalName').textContent = s.name;
-    document.getElementById('modalRole').textContent = s.role;
-    document.getElementById('modalFocus').textContent = s.focus;
-    document.getElementById('modalBody').innerHTML = s.bio;
-    const modal = document.getElementById('speakerModal');
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
+    function closeSpeaker() {
+      document.getElementById('speakerModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
 
-  function closeSpeaker() {
-    document.getElementById('speakerModal').style.display = 'none';
-    document.body.style.overflow = '';
-  }
+    function closeModalOnBackdrop(e) {
+      if (e.target === document.getElementById('speakerModal')) closeSpeaker();
+    }
 
-  function closeModalOnBackdrop(e) {
-    if (e.target === document.getElementById('speakerModal')) closeSpeaker();
-  }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSpeaker(); });
+  </script>
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeSpeaker();
-  });
-</script>
+  <script>
+    // Venue photo hover effect
+    const venueLink    = document.querySelector('.venue-right-visual a');
+    const venueLabel   = document.getElementById('venueVisitLabel');
+    const venueImg     = venueLink.querySelector('img');
+    const venueOverlay = venueLink.querySelector('div');
 
-<script>
-  const venueLink = document.querySelector('.venue-right-visual a');
-  const venueLabel = document.getElementById('venueVisitLabel');
-  const venueImg = venueLink.querySelector('img');
-  const venueOverlay = venueLink.querySelector('div');
-  venueLink.addEventListener('mouseenter', () => {
-    venueLabel.style.opacity = '1';
-    venueImg.style.transform = 'scale(1.03)';
-    venueOverlay.style.background = 'linear-gradient(to top, rgba(26,42,26,0.85) 0%, rgba(26,42,26,0.3) 60%)';
-  });
-  venueLink.addEventListener('mouseleave', () => {
-    venueLabel.style.opacity = '0';
-    venueImg.style.transform = 'scale(1)';
-    venueOverlay.style.background = 'linear-gradient(to top, rgba(26,42,26,0.6) 0%, transparent 50%)';
-  });
-</script>
+    venueLink.addEventListener('mouseenter', () => {
+      venueLabel.style.opacity   = '1';
+      venueImg.style.transform   = 'scale(1.03)';
+      venueOverlay.style.background = 'linear-gradient(to top, rgba(26,42,26,0.85) 0%, rgba(26,42,26,0.3) 60%)';
+    });
+    venueLink.addEventListener('mouseleave', () => {
+      venueLabel.style.opacity   = '0';
+      venueImg.style.transform   = 'scale(1)';
+      venueOverlay.style.background = 'linear-gradient(to top, rgba(26,42,26,0.6) 0%, transparent 50%)';
+    });
+  </script>
 
 </body>
 </html>
