@@ -706,6 +706,16 @@ nav {
       font-weight: 400;
     }
 
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .speaker-card:hover .speaker-avatar img {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+  }
+  .speaker-avatar img { transition: transform 0.4s ease; }
+
     /* ============ VENUE ============ */
     .section-venue {
       padding: 5rem 0;
@@ -1317,50 +1327,75 @@ nav {
   </section>
 
   <!-- ============ SPEAKERS ============ -->
-  <section class="section-speakers" id="speakers">
-    <div class="container">
-      <div class="speakers-header fade-in">
-        <div class="section-tag" style="justify-content: center;">Invited Speakers</div>
-        <h2>Keynote <em style="font-style:italic; color: var(--teal-dark);">Speakers</em></h2>
-        <p>Distinguished voices from philosophy, psychology, sustainability science, and contemplative studies</p>
+<section class="section-speakers" id="speakers">
+  <div class="container">
+    <div class="speakers-header fade-in">
+      <div class="section-tag" style="justify-content: center;">Invited Speakers</div>
+      <h2>Keynote <em style="font-style:italic; color: var(--teal-dark);">Speakers</em></h2>
+      <p>Distinguished voices from philosophy, psychology, sustainability science, and contemplative studies</p>
+    </div>
+    <div class="speakers-grid">
+
+      <div class="speaker-card fade-in" onclick="openSpeaker('loy')" style="cursor:pointer;">
+        <div class="speaker-avatar" style="background:none; overflow:hidden;">
+          <img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+        </div>
+        <div class="speaker-name">David Loy</div>
+        <div class="speaker-role">Philosopher · Author</div>
+        <p class="speaker-bio">A leading voice at the intersection of Zen Buddhism and social thought, David Loy has written extensively on ecological crisis, the role of inner transformation in addressing environmental challenges, and Buddhist perspectives on sustainability.</p>
+        <span class="speaker-focus">Buddhism &amp; Ecology</span>
+        <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
       </div>
-      <div class="speakers-grid">
 
-        <div class="speaker-card fade-in">
-          <div class="speaker-avatar" style="background:none; overflow:hidden;"><img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
-          <div class="speaker-name">David Loy</div>
-          <div class="speaker-role">Philosopher · Author</div>
-          <p class="speaker-bio">A leading voice at the intersection of Zen Buddhism and social thought, David Loy has written extensively on ecological crisis, the role of inner transformation in addressing environmental challenges, and Buddhist perspectives on sustainability.</p>
-          <span class="speaker-focus">Buddhism &amp; Ecology</span>
+      <div class="speaker-card fade-in" onclick="openSpeaker('wamsler')" style="cursor:pointer;">
+        <div class="speaker-avatar" style="background:none; overflow:hidden;">
+          <img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
         </div>
+        <div class="speaker-name">Christine Wamsler</div>
+        <div class="speaker-role">Professor · Lund University</div>
+        <p class="speaker-bio">Professor at Lund University's Centre for Sustainability Studies, Christine Wamsler's research explores the links between mindfulness, inner development, and sustainability transformations, pioneering the field of contemplative sustainability science.</p>
+        <span class="speaker-focus">Inner Sustainability</span>
+        <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
+      </div>
 
-        <div class="speaker-card fade-in">
-          <div class="speaker-avatar" style="background:none; overflow:hidden;"><img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
-          <div class="speaker-name">Christine Wamsler</div>
-          <div class="speaker-role">Professor · Lund University</div>
-          <p class="speaker-bio">Professor at Lund University's Centre for Sustainability Studies, Christine Wamsler's research explores the links between mindfulness, inner development, and sustainability transformations, pioneering the field of contemplative sustainability science.</p>
-          <span class="speaker-focus">Inner Sustainability</span>
+      <div class="speaker-card fade-in" onclick="openSpeaker('labranche')" style="cursor:pointer;">
+        <div class="speaker-avatar" style="background:none; overflow:hidden;">
+          <img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
         </div>
+        <div class="speaker-name">Stéphane Labranche</div>
+        <div class="speaker-role">Researcher · Social Sciences</div>
+        <p class="speaker-bio">Stéphane Labranche is an independent sociologist and IPCC expert reviewer specializing in climate, energy, and biodiversity transitions, with over 50 research projects informing national and territorial climate strategies across France.</p>
+        <span class="speaker-focus">Climate Behavior</span>
+        <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
+      </div>
 
-        <div class="speaker-card fade-in">
-          <div class="speaker-avatar" style="background:none; overflow:hidden;"><img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;"></div>
-          <div class="speaker-name">Stéphane Labranche</div>
-          <div class="speaker-role">Researcher · Social Sciences</div>
-          <p class="speaker-bio">Stéphane Labranche is an independent sociologist and IPCC expert reviewer specializing in climate, energy, and biodiversity transitions, with over 50 research projects informing national and territorial climate strategies across France.</p>
-          <span class="speaker-focus">Climate Behavior</span>
-        </div>
+    </div>
+  </div>
+</section>
 
-        <!-- <div class="speaker-card fade-in">
-          <div class="speaker-avatar" style="background:none; overflow:hidden;"><img src="/images/bonaiuto.jpg" alt="Marino Bonaiuto" style="width:100%; height:100%; object-fit:cover; object-position: center top; border-radius:50%;"></div>
-          <div class="speaker-name">Marino Bonaiuto</div>
-          <div class="speaker-role">Professor · Sapienza University</div>
-          <p class="speaker-bio">Full Professor of Social and Environmental Psychology at Sapienza University of Rome, Marino Bonaiuto is an internationally recognized authority on place identity, restorative environments, and the psychological dimensions of human–environment relationships.</p>
-          <span class="speaker-focus">Environmental Psychology</span>
-        </div> -->
+<!-- ============ SPEAKER MODAL ============ -->
+<div id="speakerModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,20,10,0.82); backdrop-filter:blur(6px); overflow-y:auto;" onclick="closeModalOnBackdrop(event)">
+  <div id="speakerModalInner" style="max-width:740px; margin:5vh auto 5vh; background:var(--dark); border:1px solid rgba(106,191,75,0.2); position:relative; animation:modalIn 0.3s ease;">
 
+    <!-- Close button -->
+    <button onclick="closeSpeaker()" style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(106,191,75,0.1); border:1px solid rgba(106,191,75,0.25); color:var(--teal-light); width:38px; height:38px; border-radius:50%; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background 0.2s;"
+      onmouseover="this.style.background='rgba(106,191,75,0.2)'" onmouseout="this.style.background='rgba(106,191,75,0.1)'">✕</button>
+
+    <!-- Header band -->
+    <div id="modalHeader" style="padding:3rem 3rem 2rem; border-bottom:1px solid rgba(106,191,75,0.12); display:flex; align-items:flex-start; gap:2rem; flex-wrap:wrap;">
+      <img id="modalImg" src="" alt="" style="width:100px; height:100px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid rgba(106,191,75,0.3);">
+      <div style="flex:1; min-width:200px;">
+        <div id="modalTag" style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:0.6rem;"></div>
+        <div id="modalName" style="font-family:'Bebas Neue',sans-serif; font-size:2.8rem; color:#fff; letter-spacing:0.04em; line-height:1;"></div>
+        <div id="modalRole" style="font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-top:0.5rem; font-weight:400;"></div>
+        <span id="modalFocus" style="display:inline-block; margin-top:1rem; padding:0.3rem 0.9rem; background:var(--rose-pale); color:var(--rose); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;"></span>
       </div>
     </div>
-  </section>
+
+    <!-- Body -->
+    <div id="modalBody" style="padding:2.5rem 3rem 3rem; font-family:'Outfit',sans-serif; font-size:0.92rem; line-height:1.9; color:rgba(255,255,255,0.75); font-weight:300;"></div>
+  </div>
+</div>
 
   <!-- ============ VENUE ============ -->
   <section class="section-venue" id="venue">
@@ -1674,6 +1709,77 @@ nav {
       });
     });
   </script>
+
+<script>
+  const speakers = {
+    loy: {
+      name: 'David Loy',
+      role: 'Philosopher · Author · Zen Teacher',
+      tag: 'Keynote Speaker',
+      focus: 'Buddhism & Ecology',
+      img: '/images/loy.jpg',
+      bio: `
+        <p>David Robert Loy is a professor, writer, and Zen teacher in the Sanbo Zen tradition of Japanese Zen Buddhism. A scholar of Buddhist and comparative philosophy, he holds a PhD from the National University of Singapore and has held academic positions at institutions across Asia, North America, and Europe.</p>
+        <p>His work focuses on the encounter between Buddhism and modernity, with a particular emphasis on social and ecological issues. He is a prolific author whose books and essays have been translated into many languages and appear regularly in publications such as <em>Tricycle</em>, <em>Lion's Roar</em>, and <em>Tikkun</em>.</p>
+        <p>His latest book, <em>Ecodharma: Buddhist Teachings for the Ecological Crisis</em> (2019), reflects his deep commitment to exploring Buddhist responses to the environmental emergency. He lectures and leads meditation retreats internationally, and is a founding member of the Rocky Mountain Ecodharma Retreat Center near Boulder, Colorado.</p>
+        <p>He serves on the advisory boards of Buddhist Global Relief, the Clear View Project, Zen Peacemakers, and the Ernest Becker Foundation.</p>
+      `
+    },
+    wamsler: {
+      name: 'Christine Wamsler',
+      role: 'Professor · Lund University',
+      tag: 'Keynote Speaker',
+      focus: 'Inner Sustainability',
+      img: '/images/wamsler.jpg',
+      bio: `
+        <p>Christine Wamsler is Professor of Sustainability Science and Director of the Contemplative Sustainable Futures Program at Lund University, the world's leading university in sustainability (QS World University Rankings). She is ranked among the 6th most influential scholars in ecology, earth, and environmental sciences globally (Stanford–Elsevier Top 2% Scientists).</p>
+        <p>A leading expert in the emerging field of inner transformation, mindfulness and sustainability, Christine has co-developed theories, approaches, leadership training, and educational programs in these areas. She has published more than 200 academic articles, book chapters, and books.</p>
+        <p>She serves as Senior Scientific Advisor to the Inner Development Goals (IDG) Initiative, the UNDP Conscious Food Systems Alliance, the Office of the United Nations High Commissioner for Human Rights (OHCHR) and its Mindfulness Initiative, the Global Compassion Coalition, and the Inner Green Deal, among others.</p>
+        <p>Christine's workplace, the Lund University Centre for Sustainability Studies (LUCSUS), is a renowned interdisciplinary centre for research, teaching and impact, and a founding organization of the IDG Initiative as well as the Global University Coalition for Student Inner Development for Societal Change.</p>
+      `
+    },
+    labranche: {
+      name: 'Stéphane Labranche',
+      role: 'Independent Sociologist · IPCC Expert Reviewer',
+      tag: 'Keynote Speaker',
+      focus: 'Climate Behavior',
+      img: '/images/labranche.jpg',
+      bio: `
+        <p>Stéphane La Branche is an independent sociologist specializing in transition issues and the GIECO/IPBC scientific coordinator. His research — spanning more than 50 completed or ongoing projects — focuses on the obstacles and drivers of changes in practices, perceptions, and social representations regarding climate change, energy, and biodiversity.</p>
+        <p>As an invited expert in France's Energy Transition Law process and in the drafting of three national adaptation strategy documents on climate change, he has contributed to the development of several national and territorial climate strategies. His research in the Human and Social Sciences of energy and climate earned him a nomination as an expert reviewer for the IPCC.</p>
+        <p>The results of his research have been integrated into transition policies and strategies — covering mobility, energy, urban planning, and information and support campaigns — for private operators, companies, public bodies, and associations, as well as lifestyle 2050 prospective scenarios.</p>
+      `
+    }
+  };
+
+  function openSpeaker(id) {
+    const s = speakers[id];
+    if (!s) return;
+    document.getElementById('modalImg').src = s.img;
+    document.getElementById('modalImg').alt = s.name;
+    document.getElementById('modalTag').textContent = s.tag;
+    document.getElementById('modalName').textContent = s.name;
+    document.getElementById('modalRole').textContent = s.role;
+    document.getElementById('modalFocus').textContent = s.focus;
+    document.getElementById('modalBody').innerHTML = s.bio;
+    const modal = document.getElementById('speakerModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSpeaker() {
+    document.getElementById('speakerModal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnBackdrop(e) {
+    if (e.target === document.getElementById('speakerModal')) closeSpeaker();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSpeaker();
+  });
+</script>
 
 </body>
 </html>
