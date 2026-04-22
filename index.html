@@ -550,6 +550,45 @@
       margin-top: 0.8rem;
       font-weight: 300;
     }
+	
+	.dates-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+.dates-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s;
+}
+
+.dates-table tbody tr:hover {
+  background-color: rgba(106, 191, 75, 0.03);
+}
+
+.date-event {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--dark);
+  padding: 1.5rem 2rem;
+  text-align: left;
+}
+
+.date-range {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem;
+  color: var(--teal-dark);
+  letter-spacing: 0.05em;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.dates-table .date-status {
+  padding: 0.4rem 1rem;
+  text-align: center;
+}
 
     /* ============ REGISTRATION ============ */
     .section-register {
@@ -996,39 +1035,35 @@
   </section>
 
   <!-- ============ DATES ============ -->
-  <section class="section-dates" id="dates">
-    <div class="container">
-
-      <div class="dates-header fade-in">
-        <div class="section-tag" style="justify-content:center;">Key Dates</div>
-        <h2>Important <em style="font-style:italic; color:var(--rose);">Dates</em></h2>
-      </div>
-
-      <div class="dates-grid">
-        <div class="date-card fade-in">
-          <h3>Abstract Submission</h3>
-          <div class="date-value">1 MAY to 30 JUNE</div>
-          <p>Submit your abstract for oral or poster presentation. Interdisciplinary work bridging mindfulness and environmental science is especially welcome.</p>
-        </div>
-        <div class="date-card fade-in">
-          <h3>Resonse Notification</h3>
-          <div class="date-value">10 JULY</div>
-          <p>Authors will be notified of acceptance decisions for their abstract submissions.</p>
-        </div>
-		<div class="date-card fade-in">
-          <h3>Early Registration</h3>
-          <div class="date-value">15 MAY to 31 JULY</div>
-          <p>Early-bird discounts available. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
-        </div>
-        <div class="date-card fade-in">
-          <h3>Late Registration</h3>
-          <div class="date-value">since 1 AUGUST</div>
-          <p>Standard registration rates apply. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  <section class="section-dates">
+  <div class="dates-header">
+    <h2>Important Dates</h2>
+  </div>
+  <table class="dates-table">
+    <tbody>
+      <tr>
+        <td class="date-event">Abstract Submission</td>
+        <td class="date-range">1 MAY – 30 JUNE</td>
+        <td class="date-status status-open">OPEN</td>
+      </tr>
+      <tr>
+        <td class="date-event">Response Notification</td>
+        <td class="date-range">17–19 SEPTEMBER 2026</td>
+        <td class="date-status status-upcoming">UPCOMING</td>
+      </tr>
+      <tr>
+        <td class="date-event">Early Registration</td>
+        <td class="date-range">15 MAY – 31 JULY</td>
+        <td class="date-status status-open">OPEN</td>
+      </tr>
+      <tr>
+        <td class="date-event">Late Registration</td>
+        <td class="date-range">1 AUGUST ONWARDS</td>
+        <td class="date-status status-upcoming">UPCOMING</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
   <!-- ============ REGISTER ============ -->
   <section class="section-register" id="register">
