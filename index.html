@@ -81,6 +81,15 @@
 
     .nav-links a:hover { color: var(--teal-dark); }
 
+    .nav-links a.nav-submit {
+      color: var(--teal-dark);
+      font-weight: 500;
+      border-bottom: 1.5px solid var(--teal);
+      padding-bottom: 1px;
+    }
+
+    .nav-links a.nav-submit:hover { color: var(--teal); border-bottom-color: var(--teal-dark); }
+
     .nav-toggle {
       display: none;
       font-size: 1.5rem;
@@ -551,6 +560,142 @@
       font-weight: 300;
     }
 
+    /* ============ ABSTRACT SUBMISSION ============ */
+    .section-submit {
+      padding: 5.5rem 0;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-submit::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(106,191,75,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .section-submit::after {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(240,112,64,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .submit-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .submit-left h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.4rem;
+    }
+
+    .submit-left p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: rgba(184,232,154,0.75);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .submit-left p strong {
+      color: var(--teal-light);
+      font-weight: 500;
+    }
+
+    .submit-cta {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2.4rem;
+      background: var(--teal);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .submit-cta:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(106,191,75,0.25);
+    }
+
+    .submit-cta svg {
+      width: 16px; height: 16px;
+      fill: #fff;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+    }
+
+    .submit-cta:hover svg { transform: translateX(4px); }
+
+    .submit-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(106,191,75,0.12);
+    }
+
+    .submit-info-row {
+      background: rgba(255,255,255,0.03);
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      transition: background 0.2s;
+      border-left: 2px solid transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .submit-info-row:hover {
+      background: rgba(106,191,75,0.06);
+      border-left-color: var(--teal);
+    }
+
+    .submit-info-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .submit-info-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 900px) {
+      .submit-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
     /* ============ REGISTRATION ============ */
     .section-register {
       padding: 4.5rem 0;
@@ -735,6 +880,7 @@
       <li><a href="#dates">Dates</a></li>
       <li><a href="#venue">Venue</a></li>
       <li><a href="#register">Register</a></li>
+      <li><a href="#submit" class="nav-submit">Submit Abstract</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="icem2023.html">Past Edition [2023]</a></li>
     </ul>
@@ -742,19 +888,13 @@
 
   <!-- ============ HERO ============ -->
   <section style="display:block; min-height:100vh; position:relative; overflow:hidden;">
-
-    <!-- Background photo -->
     <div style="position:absolute; inset:0; background:url('/images/main_sfondo.jpg') center 40%/cover no-repeat;"></div>
-
-    <!-- Gradient overlay -->
     <div style="
       position:absolute; inset:0;
       background:
         linear-gradient(to right, rgba(26,42,26,0.85) 0%, rgba(26,42,26,0.55) 55%, rgba(26,42,26,0.2) 100%),
         linear-gradient(to top, rgba(26,42,26,0.6) 0%, transparent 45%);
     "></div>
-
-    <!-- Content -->
     <div style="
       position:relative; z-index:2;
       min-height:100vh;
@@ -766,18 +906,15 @@
         <span style="display:block; width:24px; height:1px; background:var(--teal);"></span>
         2nd Edition · Rome 2026
       </span>
-
       <h1 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(4rem,7vw,8rem); font-weight:400; letter-spacing:0.04em; line-height:0.95; color:#ffffff;">
         International<br>
         Conference on<br>
         <span style="color:var(--teal);">Environmental</span><br>
         <span style="color:var(--rose);">Mindfulness</span>
       </h1>
-
       <p style="font-family:'Outfit',sans-serif; font-size:1rem; line-height:1.75; color:rgba(255,255,255,0.82); max-width:480px; font-weight:300; margin-top:2rem; margin-bottom:3rem;">
         Bringing together researchers in environmental psychology, mindfulness, neuropsychology, and contemplative studies to shape the scientific agenda for sustainable futures.
       </p>
-
       <div style="display:flex; gap:2.5rem; flex-wrap:wrap; margin-bottom:3rem;">
         <div>
           <span style="display:block; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:0.2rem;">Dates</span>
@@ -792,60 +929,68 @@
           <span style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:#fff; letter-spacing:0.05em;">In person + Virtual</span>
         </div>
       </div>
-
       <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-		<a href="#register" style="display:inline-block; padding:0.9rem 2.2rem; background:var(--teal); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s;">Register Now</a>
-		<!-- <a href="#about" style="display:inline-block; padding:0.9rem 2.2rem; border:1.5px solid rgba(255,255,255,0.35); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif;">Learn More</a> -->
-		<a href="/images/Provisional_program.png" download style="display:inline-block; padding:0.9rem 2.2rem; background:#fff; color:var(--teal); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s; font-weight:600;">Provisional Program</a>
-	  </div>
+        <a href="#register" style="display:inline-block; padding:0.9rem 2.2rem; background:var(--teal); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s;">Register Now</a>
+        <a href="/images/Provisional_program.png" download style="display:inline-block; padding:0.9rem 2.2rem; background:#fff; color:var(--teal); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s; font-weight:600;">Provisional Program</a>
+      </div>
     </div>
-
-    <!-- Scroll indicator -->
     <a href="#about" style="position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.4rem; color:rgba(255,255,255,0.4); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none; z-index:2;">
       <span>Scroll</span>
       <div style="width:1px; height:40px; background:linear-gradient(to bottom, var(--teal), transparent); animation:scrollPulse 2s infinite;"></div>
     </a>
-
   </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="section-about" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-left fade-in">
-        <div class="section-tag">About ICEM</div>
-        <h2>Where science and contemplation meet</h2>
-        
-        <!-- Provisional Program Download -->
-        <div style="margin-top:2rem; padding:2rem; background:var(--off-white); border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; gap:1.5rem;">
-          <div>
-            <span style="display:block; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-dark); margin-bottom:0.4rem; font-weight:500;">📅 Provisional Program</span>
-            <p style="font-size:0.88rem; color:var(--text-body); margin:0;">Download the conference schedule</p>
+  <!-- ============ ABOUT ============ -->
+  <section class="section-about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left fade-in">
+          <div class="section-tag">About ICEM</div>
+          <h2>Where science and contemplation meet</h2>
+          <div style="margin-top:2rem; padding:2rem; background:var(--off-white); border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; gap:1.5rem;">
+            <div>
+              <span style="display:block; font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-dark); margin-bottom:0.4rem; font-weight:500;">📅 Provisional Program</span>
+              <p style="font-size:0.88rem; color:var(--text-body); margin:0;">Download the conference schedule</p>
+            </div>
+            <a href="/images/Provisional_program.png" style="display:inline-block; padding:0.9rem 2.2rem; background:var(--teal); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s;">Download</a>
           </div>
-          <a href="/images/Provisional_program.png" style="display:inline-block; padding:0.9rem 2.2rem; background:var(--teal); color:#fff; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; font-family:'Outfit',sans-serif; transition:background 0.25s;">
-			Download
-		  </a>
+        </div>
+        <div class="about-right fade-in">
+          <p>ICEM is an international forum dedicated to exploring the intersection of <strong>mindfulness practice</strong> and <strong>environmental behavior</strong>. Building on the success of the first edition (Rome, November 2023), the 2026 conference continues to bridge the scientific communities of mindfulness research and environmental psychology.</p>
+          <p>With a focus on how inner transformation can drive sustainable action, ICEM brings together researchers, practitioners, and policymakers. Each day of the conference begins and closes with a guided meditation on interconnectedness, ecology, and human–nature interaction.</p>
+          <p>Keynote lectures from leading experts are paired with talks from contemplative practitioners within the same sessions — a unique format that has made ICEM a distinctive voice in the global mindfulness and sustainability conversation.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="about-right fade-in">
-        <p>ICEM is an international forum dedicated to exploring the intersection of <strong>mindfulness practice</strong> and <strong>environmental behavior</strong>. Building on the success of the first edition (Rome, November 2023), the 2026 conference continues to bridge the scientific communities of mindfulness research and environmental psychology.</p>
-        <p>With a focus on how inner transformation can drive sustainable action, ICEM brings together researchers, practitioners, and policymakers. Each day of the conference begins and closes with a guided meditation on interconnectedness, ecology, and human–nature interaction.</p>
-        <p>Keynote lectures from leading experts are paired with talks from contemplative practitioners within the same sessions — a unique format that has made ICEM a distinctive voice in the global mindfulness and sustainability conversation.</p>
+  <!-- ============ ABSTRACT SUBMISSION ============ -->
+  <section class="section-submit" id="submit">
+    <div class="container">
+      <div class="submit-inner">
+
+        <div class="submit-left fade-in">
+          <div class="section-tag" style="color:var(--teal-light);">Call for Abstracts</div>
+          <h2>Share Your Research</h2>
+          <p>We invite researchers, practitioners, and scholars to submit abstracts for <strong>oral presentations</strong> and <strong>poster sessions</strong>. Contributions bridging mindfulness, environmental psychology, contemplative science, and sustainability are especially encouraged.</p>
+          <p>Abstracts should be no longer than <strong>300 words</strong> and include a clear statement of aim, method, and relevance to the conference themes. Both empirical studies and theoretical or applied contributions are welcome.</p>
+          <p>Submissions are open from <strong>1 May to 30 June 2026</strong>. Acceptance notifications will be sent by 10 July.</p>
+          <a href="https://docs.google.com/forms/d/1bSFKs55_mZFjLvHSORZZGv0Tx7fXWE0-ZE67sC71d2c/viewform" target="_blank" rel="noopener" class="submit-cta">
+            Submit Your Abstract
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ============ TOPICS ============ -->
   <section class="section-topics" id="topics">
     <div class="container">
-
       <div class="topics-header">
         <h2 class="fade-in">Conference <em style="font-style:italic; color:var(--teal-light);">Topics</em></h2>
         <p class="fade-in">The conference welcomes submissions across a wide range of intersecting themes connecting psychology, mindfulness, and environmental sustainability — from empirical research in environmental psychology to contemplative and applied approaches.</p>
       </div>
-
       <div class="topics-grid">
         <div class="topic-card fade-in">
           <div class="topic-num">01</div>
@@ -878,22 +1023,18 @@
           <p class="topic-desc">Design and evaluation of mindfulness-based and nature-based interventions in educational, clinical, and community contexts.</p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ============ SPEAKERS ============ -->
   <section class="section-speakers" id="speakers">
     <div class="container">
-
       <div class="speakers-header fade-in">
         <div class="section-tag" style="justify-content:center;">Invited Speakers</div>
         <h2>Keynote <em style="font-style:italic; color:var(--teal-dark);">Speakers</em></h2>
         <p>Distinguished voices from philosophy, psychology, sustainability science, and contemplative studies</p>
       </div>
-
       <div class="speakers-grid">
-
         <div class="speaker-card fade-in" onclick="openSpeaker('loy')" style="cursor:pointer;">
           <div class="speaker-avatar">
             <img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
@@ -904,7 +1045,6 @@
           <span class="speaker-focus">Buddhism &amp; Ecology</span>
           <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
         </div>
-
         <div class="speaker-card fade-in" onclick="openSpeaker('wamsler')" style="cursor:pointer;">
           <div class="speaker-avatar">
             <img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
@@ -915,7 +1055,6 @@
           <span class="speaker-focus">Inner Sustainability</span>
           <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
         </div>
-
         <div class="speaker-card fade-in" onclick="openSpeaker('labranche')" style="cursor:pointer;">
           <div class="speaker-avatar">
             <img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
@@ -926,7 +1065,6 @@
           <span class="speaker-focus">Climate Behavior</span>
           <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
         </div>
-
       </div>
     </div>
   </section>
@@ -934,12 +1072,8 @@
   <!-- ============ SPEAKER MODAL ============ -->
   <div id="speakerModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,20,10,0.82); backdrop-filter:blur(6px); overflow-y:auto;" onclick="closeModalOnBackdrop(event)">
     <div id="speakerModalInner" style="max-width:740px; margin:5vh auto 5vh; background:var(--dark); border:1px solid rgba(106,191,75,0.2); position:relative; animation:modalIn 0.3s ease;">
-
-      <!-- Close button -->
       <button onclick="closeSpeaker()" style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(106,191,75,0.1); border:1px solid rgba(106,191,75,0.25); color:var(--teal-light); width:38px; height:38px; border-radius:50%; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background 0.2s;"
         onmouseover="this.style.background='rgba(106,191,75,0.2)'" onmouseout="this.style.background='rgba(106,191,75,0.1)'">✕</button>
-
-      <!-- Header -->
       <div id="modalHeader" style="padding:3rem 3rem 2rem; border-bottom:1px solid rgba(106,191,75,0.12); display:flex; align-items:flex-start; gap:2rem; flex-wrap:wrap;">
         <img id="modalImg" src="" alt="" style="width:100px; height:100px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid rgba(106,191,75,0.3);">
         <div style="flex:1; min-width:200px;">
@@ -949,34 +1083,34 @@
           <span id="modalFocus" style="display:inline-block; margin-top:1rem; padding:0.3rem 0.9rem; background:var(--rose-pale); color:var(--rose); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:400;"></span>
         </div>
       </div>
-
-      <!-- Body -->
       <div id="modalBody" style="padding:2.5rem 3rem 3rem; font-family:'Outfit',sans-serif; font-size:0.92rem; line-height:1.9; color:rgba(255,255,255,0.75); font-weight:300;"></div>
-
     </div>
   </div>
-  
-    <!-- ============ DATES ============ -->
+
+  <!-- ============ DATES ============ -->
   <section class="section-dates" id="dates">
     <div class="container">
-
       <div class="dates-header fade-in">
         <div class="section-tag" style="justify-content:center;">Key Dates</div>
         <h2>Important <em style="font-style:italic; color:var(--rose);">Dates</em></h2>
       </div>
-
       <div class="dates-grid">
         <div class="date-card fade-in">
           <h3>Abstract Submission</h3>
           <div class="date-value">1 MAY to 30 JUNE</div>
           <p>Submit your abstract for oral or poster presentation. Interdisciplinary work bridging mindfulness and environmental science is especially welcome.</p>
+          <a href="https://docs.google.com/forms/d/1bSFKs55_mZFjLvHSORZZGv0Tx7fXWE0-ZE67sC71d2c/viewform" target="_blank" rel="noopener"
+            style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-dark); text-decoration:none; font-weight:500; font-family:'Outfit',sans-serif; transition:color 0.2s;"
+            onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--teal-dark)'">
+            Submit your abstract →
+          </a>
         </div>
         <div class="date-card fade-in">
           <h3>Response Notification</h3>
           <div class="date-value">10 JULY</div>
           <p>Authors will be notified of acceptance decisions for their abstract submissions.</p>
         </div>
-		<div class="date-card fade-in">
+        <div class="date-card fade-in">
           <h3>Early Registration</h3>
           <div class="date-value">15 MAY to 30 JULY</div>
           <p>Early-bird discounts available. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
@@ -987,41 +1121,32 @@
           <p>Standard registration rates apply. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
         </div>
       </div>
-
     </div>
   </section>
-  
 
   <!-- ============ VENUE ============ -->
   <section class="section-venue" id="venue">
     <div class="container">
       <div class="venue-grid">
-
         <div class="venue-left fade-in">
           <div class="section-tag">Venue</div>
           <h2>UNINT, Rome</h2>
           <p>The 2nd ICEM will be hosted at UNINT — Università degli Studi Internazionali di Roma — a dynamic international university in the heart of Rome, dedicated to dialogue between cultures, disciplines, and traditions.</p>
           <p>Rome's unique position as a crossroads of history, spirituality, and contemporary culture makes it the perfect backdrop for a conference on environmental mindfulness — a city where ancient contemplative wisdom and modern science have long coexisted.</p>
-
           <div class="venue-details-list">
-
-			<!-- Google Maps embed -->
-			<div style="margin-top:0.5rem; overflow:hidden; border:1px solid var(--border);">
-			  <iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.5194514400428!2d12.49376737608366!3d41.86016917124371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258a70dd6f5149%3A0xd612c4fab26c0568!2sUNINT%20Universit%C3%A0%20degli%20Studi%20Internazionali%20di%20Roma!5e0!3m2!1sit!2sit!4v1773401153857!5m2!1sit!2sit"
-				width="100%"
-				height="220"
-				style="border:0; display:block;"
-				allowfullscreen=""
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade">
-			  </iframe>
-			</div>
-
+            <div style="margin-top:0.5rem; overflow:hidden; border:1px solid var(--border);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.5194514400428!2d12.49376737608366!3d41.86016917124371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258a70dd6f5149%3A0xd612c4fab26c0568!2sUNINT%20Universit%C3%A0%20degli%20Studi%20Internazionali%20di%20Roma!5e0!3m2!1sit!2sit!4v1773401153857!5m2!1sit!2sit"
+                width="100%"
+                height="220"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
           </div>
         </div>
-
-        <!-- Venue photo -->
         <div class="venue-right-visual fade-in">
           <a href="https://www.unint.eu" target="_blank" rel="noopener" style="display:block; position:relative; overflow:hidden; height:420px; text-decoration:none;">
             <img src="/images/unint_venue.jpg" alt="UNINT University, Rome"
@@ -1036,7 +1161,6 @@
             </div>
           </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -1045,7 +1169,6 @@
   <section class="section-register" id="register">
     <div class="container">
       <div class="register-grid">
-
         <div class="register-left fade-in">
           <div class="section-tag" style="color:var(--teal-light);">Registration</div>
           <h2>Join us in Rome — in person or virtually</h2>
@@ -1054,7 +1177,6 @@
             onclick="setTimeout(()=>{document.querySelector('[name=subject]').value='Newsletter subscription';document.querySelector('[name=message]').value='Please add me to the ICEM 2026 mailing list.';},100)"
             class="btn btn-teal">Stay Updated</a>
         </div>
-
         <div class="register-right fade-in">
           <div class="fee-row featured">
             <span class="fee-label">Academic / Standard</span>
@@ -1073,7 +1195,6 @@
             <span class="fee-price">Reduced fee</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1098,8 +1219,6 @@
   <section id="contact" style="padding:4.5rem 0; background:var(--dark);">
     <div class="container">
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:3rem; align-items:start;">
-
-        <!-- Contact info -->
         <div>
           <div class="section-tag" style="color:var(--teal-light);">Contact Us</div>
           <h2 style="font-family:'Bebas Neue',sans-serif; font-size:clamp(2.5rem,4vw,4rem); color:#fff; letter-spacing:0.05em; margin-bottom:1.5rem; line-height:1;">Get in Touch</h2>
@@ -1127,8 +1246,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Contact form -->
         <div>
           <form id="contactForm" action="https://formspree.io/f/xeelvebl" method="POST" style="display:flex; flex-direction:column; gap:1rem;">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
@@ -1170,15 +1287,12 @@
             <div id="formMsg" style="display:none; font-size:0.85rem; padding:0.8rem 1rem; margin-top:0.5rem;"></div>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer style="display:block; padding:0;">
-
-    <!-- Newsletter strip -->
     <div style="background:var(--teal); padding:2rem clamp(1rem,5vw,4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
       <div>
         <span style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; color:#fff; letter-spacing:0.06em;">Stay Updated</span>
@@ -1196,8 +1310,6 @@
         </button>
       </form>
     </div>
-
-    <!-- Main footer -->
     <div style="background:var(--dark); border-top:1px solid rgba(106,191,75,0.15); padding:2.5rem clamp(1rem,5vw,4rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; box-sizing:border-box; max-width:100%;">
       <div class="footer-logo">ICEM 2026 · International Conference on Environmental Mindfulness</div>
       <ul class="footer-links">
@@ -1206,6 +1318,7 @@
         <li><a href="#speakers">Speakers</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#register">Register</a></li>
+        <li><a href="#submit">Submit</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="footer-contact">
@@ -1213,13 +1326,10 @@
         &nbsp;·&nbsp; www.environmentalmindfulness.org
       </div>
     </div>
-
   </footer>
 
   <!-- ============ SCRIPTS ============ -->
-
   <script>
-    // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1229,7 +1339,6 @@
   </script>
 
   <script>
-    // Mobile nav toggle
     document.addEventListener('DOMContentLoaded', function () {
       const toggle = document.querySelector('.nav-toggle');
       const links  = document.querySelector('.nav-links');
@@ -1239,7 +1348,6 @@
   </script>
 
   <script>
-    // Speaker modal data
     const speakers = {
       loy: {
         name:  'David Loy',
@@ -1308,7 +1416,6 @@
   </script>
 
   <script>
-    // Venue photo hover effect
     const venueLink    = document.querySelector('.venue-right-visual a');
     const venueLabel   = document.getElementById('venueVisitLabel');
     const venueImg     = venueLink.querySelector('img');
