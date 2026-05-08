@@ -320,7 +320,7 @@
 
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 2px;
       background: var(--border);
     }
@@ -1028,8 +1028,18 @@
           </div>
           <div class="speaker-name">Marino Bonaiuto</div>
           <div class="speaker-role">Professor · Sapienza, University of Rome</div>
-          <p class="speaker-bio">Environmental psychologist and IAAP Division President-elect, Prof. Marino Bonaiuto (Sapienza University of Rome) specializes in social acceptance of ecological transition and environmental psychology..</p>
+          <p class="speaker-bio">Environmental psychologist and IAAP Division President-elect, Prof. Marino Bonaiuto (Sapienza University of Rome) specializes in social acceptance of ecological transition and environmental psychology.</p>
           <span class="speaker-focus">Environmental awareness</span>
+          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
+        </div>
+		<div class="speaker-card fade-in" onclick="openSpeaker('girolami')" style="cursor:pointer;">
+          <div class="speaker-avatar">
+            <img src="/images/girolami.jpg" alt="Dario Doshin Girolami" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          </div>
+          <div class="speaker-name">Dario Doshin Girolami</div>
+          <div class="speaker-role">Zen Abbot · Teacher</div>
+          <p class="speaker-bio">Abbot of the Zen Center L'Arco — Zenmon Ji and recognized teacher of the Japanese Sotoshu. Trained in monasteries across the US and studied under Thich Nhat Hanh, Reb Anderson, and received initiation from the Dalai Lama. He founded the Chaplains Network of the European Buddhist Union.</p>
+          <span class="speaker-focus">Zen Practice &amp; Buddhism</span>
           <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
         </div>
       </div>
@@ -1364,6 +1374,18 @@
           <p>Marino Bonaiuto full Professor social psychology, Faculty of Medicine and Psychology, Sapienza University of Rome; PhD board member Department of Psychology of Socialization and Development Processes; vice-Director CIRPA (Interuniversity Centre for Research in Environmental Psychology). </p>
 		  <p>Formerly: Head of Dept, then President master in Psychology of communication and marketing. Technical-Scientific Committee on Sustainability in Sapienza Member (2021-2026). Awarded Research Fellow IAAP (2018), then President elect (2022-2026) Div. #4 Environmental Psychology of IAAP (International Association of Applied Psychology). Coordinator social Psychology section Italian Association of Psychology (2026-2029).</p>
 		  <p>Expertise: social acceptance process in ecological and energy transition; residential environments; healthcare environments; natural areas; working environments; verbal and bodily and organizational communication.</p>
+        `
+	  },
+	  girolami: {
+        name:  'Dario Doshin Girolami',
+        role:  'Zen Abbot · Zen Center L'Arco',
+        tag:   'Keynote Speaker',
+        focus: 'zen practice',
+        img:   '/images/girolami.jpg',
+        bio: `
+          <p>Dario Doshin Girolami is the Abbot of the Zen Center L'Arco — Zenmon Ji. He received Dharma Transmission from Eijun Linda Cutts, abbess of the San Francisco Zen Center, and is a teacher recognized by the Japanese Sotoshu.</p>
+		  <p>Zenshinji-Tassajara, Hosshinji-City Center, Soryu-ji-Green Gulch, these are the monasteries where Doshin completed his training as a monk and teacher. He studied under Zen masters Thich Nhat Hanh and Tenshin Roshi - Reb Anderson, and received the initiation into Avalokiteshvara from His Holiness the Dalai Lama.</p>
+		  <p>He holds a degree in Religions and Philosophies of India and the Far East under Corrado Pensa at La Sapienza University in Rome. A former professor of "Zen" at John Cabot University in Rome, he leads seminars at the Faculty of Psychology of La Sapienza, and regularly teaches meditation courses at Rebibbia Prison in Rome. He is the founder of the Network and the first Chaplains training program of the European Buddhist Union, and serves as a Minister of Religion of the Italian Buddhist Union.</p>
         `
       }
     };
