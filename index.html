@@ -706,64 +706,137 @@
       background: rgba(106,191,75,0.1);
     }
 
-    .fee-row {
-      background: rgba(255,255,255,0.03);
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.2s;
-    }
-
-    .fee-row.featured {
-      background: rgba(106,191,75,0.1);
-      border-left: 2px solid var(--teal);
-    }
-	
-	.fee-table {
-	  width: 100%;
-	  border-collapse: collapse;
-	  font-family: 'Outfit', sans-serif;
+	 /* ============ REGISTER TABLE ============ */
+	.fee-wrap {
+	  background: rgba(255,255,255,0.03);
+	  border: 1px solid rgba(106,191,75,0.18);
 	}
-	.fee-table thead tr {
+
+	.fee-col-heads {
+	  display: grid;
+	  grid-template-columns: 1fr 90px 90px;
 	  border-bottom: 1px solid rgba(106,191,75,0.2);
 	}
-	.fee-th-label { text-align: left; padding: 8px 10px; font-size: 0.65rem; }
-	.fee-th-early {
-	  text-align: center; padding: 8px 10px;
-	  font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-	  color: var(--teal-light); font-weight: 500;
+
+	.fee-col-heads span {
+	  padding: 10px 14px;
+	  font-size: 0.62rem;
+	  letter-spacing: 0.14em;
+	  text-transform: uppercase;
+	  font-family: 'Outfit', sans-serif;
+	  text-align: center;
 	}
-	.fee-th-regular {
-	  text-align: center; padding: 8px 10px;
-	  font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-	  color: rgba(255,255,255,0.4); font-weight: 400;
-	}
-	.fee-td-label {
-	  padding: 12px 10px; font-size: 0.8rem; font-weight: 300;
-	  color: rgba(255,255,255,0.7); line-height: 1.4;
-	  border-bottom: 1px solid rgba(106,191,75,0.08);
-	}
-	.fee-td-early {
-	  padding: 12px 10px; text-align: center;
-	  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em;
+
+	.fee-col-heads .col-early {
 	  color: var(--teal-light);
-	  border-bottom: 1px solid rgba(106,191,75,0.08);
+	  font-weight: 500;
 	}
-	.fee-td-regular {
-	  padding: 12px 10px; text-align: center;
-	  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em;
-	  color: rgba(255,255,255,0.55);
-	  border-bottom: 1px solid rgba(106,191,75,0.08);
+
+	.fee-col-heads .col-reg {
+	  color: rgba(255,255,255,0.35);
 	}
-	.fee-tr-virtual .fee-td-label { color: var(--teal-light); }
-	.fee-tr-virtual .fee-td-early { color: var(--teal-light); }
-	.fee-tr-virtual .fee-td-regular { color: rgba(184,232,154,0.45); }
-	.fee-table tr:last-child td { border-bottom: none; }
-	.fee-note {
-	  font-size: 0.68rem; letter-spacing: 0.06em;
-	  color: rgba(184,232,154,0.35); margin-top: 1rem;
-	  font-family: 'Outfit', sans-serif; font-weight: 300;
+
+	.fee-group-label {
+	  padding: 8px 14px;
+	  font-size: 0.6rem;
+	  letter-spacing: 0.16em;
+	  text-transform: uppercase;
+	  color: var(--teal);
+	  background: rgba(106,191,75,0.07);
+	  border-bottom: 1px solid rgba(106,191,75,0.12);
+	  font-family: 'Outfit', sans-serif;
+	}
+
+	.fee-badge {
+	  display: inline-block;
+	  font-size: 0.55rem;
+	  letter-spacing: 0.1em;
+	  text-transform: uppercase;
+	  padding: 2px 6px;
+	  border-radius: 2px;
+	  margin-left: 5px;
+	  vertical-align: middle;
+	  font-family: 'Outfit', sans-serif;
+	}
+
+	.fee-badge-green {
+	  background: rgba(106,191,75,0.15);
+	  color: var(--teal);
+	}
+
+	.fee-badge-rose {
+	  background: rgba(240,112,64,0.15);
+	  color: var(--rose);
+	}
+
+	.fee-row2 {
+	  display: grid;
+	  grid-template-columns: 1fr 90px 90px;
+	  border-bottom: 1px solid rgba(106,191,75,0.07);
+	  align-items: center;
+	  transition: background 0.15s;
+	}
+
+	.fee-row2:hover { background: rgba(106,191,75,0.05); }
+	.fee-row2:last-of-type { border-bottom: none; }
+
+	.fee-row2 .fl {
+	  padding: 11px 14px;
+	  font-size: 0.78rem;
+	  color: rgba(255,255,255,0.65);
+	  font-weight: 300;
+	  font-family: 'Outfit', sans-serif;
+	  line-height: 1.35;
+	}
+
+	.fee-row2 .fe {
+	  padding: 11px 10px;
+	  text-align: center;
+	  font-family: 'Bebas Neue', sans-serif;
+	  font-size: 1.2rem;
+	  letter-spacing: 0.04em;
+	  color: var(--teal-light);
+	}
+
+	.fee-row2 .fr {
+	  padding: 11px 10px;
+	  text-align: center;
+	  font-family: 'Bebas Neue', sans-serif;
+	  font-size: 1.2rem;
+	  letter-spacing: 0.04em;
+	  color: rgba(255,255,255,0.4);
+	}
+
+	.fee-reduced {
+	  font-family: 'Outfit', sans-serif !important;
+	  font-size: 0.72rem !important;
+	  letter-spacing: 0 !important;
+	  color: rgba(184,232,154,0.5) !important;
+	}
+
+	.fee-row2-virtual .fl { color: var(--teal-light); }
+	.fee-row2-virtual .fe { color: var(--teal-light); }
+	.fee-row2-virtual .fr { color: rgba(184,232,154,0.35); }
+
+	.fee-includes {
+	  border-top: 1px solid rgba(106,191,75,0.15);
+	  padding: 12px 14px;
+	}
+
+	.fee-includes p {
+	  font-size: 0.7rem;
+	  color: rgba(184,232,154,0.5);
+	  font-family: 'Outfit', sans-serif;
+	  line-height: 1.6;
+	  margin: 0;
+	  font-weight: 300;
+	}
+
+	.fee-includes p + p { margin-top: 4px; }
+
+	.fee-dot {
+	  color: var(--teal);
+	  margin-right: 5px;
 	}
 
     .btn {
@@ -1171,61 +1244,80 @@
       </div>
     </div>
   </section>
+  
+	<!-- ============ REGISTER ============ -->
+	<section class="section-register" id="register">
+	  <div class="container">
+		<div class="register-grid">
+		  <div class="register-left fade-in">
+			<div class="section-tag" style="color:var(--teal-light);">Registration</div>
+			<h2>Join us in Rome — in person or virtually</h2>
+			<p>ICEM is committed to accessibility and offers multiple registration tiers to ensure researchers worldwide can participate, including a dedicated virtual listener option for remote attendees. Early registration comes at a reduced fee for all!</p>
+			<a href="#contact"
+			  onclick="setTimeout(()=>{document.querySelector('[name=subject]').value='Newsletter subscription';document.querySelector('[name=message]').value='Please add me to the ICEM 2026 mailing list.';},100)"
+			  class="btn btn-teal">Stay Updated</a>
+		  </div>
+		  <div class="register-right fade-in">
+			<div class="fee-wrap">
 
-  <!-- ============ REGISTER ============ -->
-  <section class="section-register" id="register">
-    <div class="container">
-      <div class="register-grid">
-        <div class="register-left fade-in">
-          <div class="section-tag" style="color:var(--teal-light);">Registration</div>
-          <h2>Join us in Rome — in person or virtually</h2>
-          <p>ICEM is committed to accessibility and offers multiple registration tiers to ensure researchers worldwide can participate, including a dedicated virtual listener option for remote attendees. Early registration comes at a reduced fee for all!</p>
-          <a href="#contact"
-            onclick="setTimeout(()=>{document.querySelector('[name=subject]').value='Newsletter subscription';document.querySelector('[name=message]').value='Please add me to the ICEM 2026 mailing list.';},100)"
-            class="btn btn-teal">Stay Updated</a>
-        </div>
-        <div class="register-right fade-in">
-		  <table class="fee-table">
-			<thead>
-			  <tr>
-				<th class="fee-th-label"></th>
-				<th class="fee-th-early">Early</th>
-				<th class="fee-th-regular">Regular</th>
-			  </tr>
-			</thead>
-			<tbody>
-			  <tr>
-				<td class="fee-td-label">Delegates – Standard</td>
-				<td class="fee-td-early">€ 400</td>
-				<td class="fee-td-regular">€ 470</td>
-			  </tr>
-			  <tr>
-				<td class="fee-td-label">PhD / Students – LMI Countries Standard</td>
-				<td class="fee-td-early">€ 300</td>
-				<td class="fee-td-regular">€ 370</td>
-			  </tr>
-			  <tr>
-				<td class="fee-td-label">Delegates – Light</td>
-				<td class="fee-td-early">€ 330</td>
-				<td class="fee-td-regular">€ 400</td>
-			  </tr>
-			  <tr>
-				<td class="fee-td-label">PhD / Students – LMI Countries Light</td>
-				<td class="fee-td-early">€ 230</td>
-				<td class="fee-td-regular">€ 300</td>
-			  </tr>
-			  <tr class="fee-tr-virtual">
-				<td class="fee-td-label">Virtual fees</td>
-				<td class="fee-td-early">€ 40</td>
-				<td class="fee-td-regular">€ 50</td>
-			  </tr>
-			</tbody>
-		  </table>
-		  <p class="fee-note">Prezzi IVA inclusa (22%).</p>
+			  <div class="fee-col-heads">
+				<span></span>
+				<span class="col-early">Early</span>
+				<span class="col-reg">Regular</span>
+			  </div>
+
+			  <div class="fee-group-label">Standard <span class="fee-badge fee-badge-green">incl. social dinner</span></div>
+			  <div class="fee-row2">
+				<div class="fl">Delegates</div>
+				<div class="fe">€ 400</div>
+				<div class="fr">€ 470</div>
+			  </div>
+			  <div class="fee-row2">
+				<div class="fl">PhD / Students – LMI Countries</div>
+				<div class="fe">€ 300</div>
+				<div class="fr">€ 370</div>
+			  </div>
+			  <div class="fee-row2">
+				<div class="fl">Contemplatives</div>
+				<div class="fe fee-reduced">reduced</div>
+				<div class="fr fee-reduced">reduced</div>
+			  </div>
+
+			  <div class="fee-group-label">Light <span class="fee-badge fee-badge-rose">no social dinner</span></div>
+			  <div class="fee-row2">
+				<div class="fl">Delegates</div>
+				<div class="fe">€ 330</div>
+				<div class="fr">€ 400</div>
+			  </div>
+			  <div class="fee-row2">
+				<div class="fl">PhD / Students – LMI Countries</div>
+				<div class="fe">€ 230</div>
+				<div class="fr">€ 300</div>
+			  </div>
+			  <div class="fee-row2">
+				<div class="fl">Contemplatives</div>
+				<div class="fe fee-reduced">reduced</div>
+				<div class="fr fee-reduced">reduced</div>
+			  </div>
+
+			  <div class="fee-group-label">Virtual</div>
+			  <div class="fee-row2 fee-row2-virtual">
+				<div class="fl">Online attendance</div>
+				<div class="fe">€ 40</div>
+				<div class="fr">€ 50</div>
+			  </div>
+
+			  <div class="fee-includes">
+				<p><span class="fee-dot">✦</span>All fees include coffee breaks &amp; welcome event (Sep 17)</p>
+				<p><span class="fee-dot">✦</span>Standard fee includes social dinner · Light fee does not</p>
+				<p><span class="fee-dot">✦</span>Prices VAT included (22%)</p>
+			  </div>
+
+			</div>
+		  </div>
 		</div>
-      </div>
-    </div>
-  </section>
+	  </div>
+	</section>
 
   <!-- ============ PARTNERS ============ -->
   <section style="padding:4rem 0; background:#ffffff; border-top:1px solid var(--border);">
