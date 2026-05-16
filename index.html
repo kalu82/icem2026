@@ -735,6 +735,52 @@
       background: rgba(106,191,75,0.1);
       border-left: 2px solid var(--teal);
     }
+	
+	.fee-table {
+	  width: 100%;
+	  border-collapse: collapse;
+	  font-family: 'Outfit', sans-serif;
+	}
+	.fee-table thead tr {
+	  border-bottom: 1px solid rgba(106,191,75,0.2);
+	}
+	.fee-th-label { text-align: left; padding: 8px 10px; font-size: 0.65rem; }
+	.fee-th-early {
+	  text-align: center; padding: 8px 10px;
+	  font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+	  color: var(--teal-light); font-weight: 500;
+	}
+	.fee-th-regular {
+	  text-align: center; padding: 8px 10px;
+	  font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+	  color: rgba(255,255,255,0.4); font-weight: 400;
+	}
+	.fee-td-label {
+	  padding: 12px 10px; font-size: 0.8rem; font-weight: 300;
+	  color: rgba(255,255,255,0.7); line-height: 1.4;
+	  border-bottom: 1px solid rgba(106,191,75,0.08);
+	}
+	.fee-td-early {
+	  padding: 12px 10px; text-align: center;
+	  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em;
+	  color: var(--teal-light);
+	  border-bottom: 1px solid rgba(106,191,75,0.08);
+	}
+	.fee-td-regular {
+	  padding: 12px 10px; text-align: center;
+	  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em;
+	  color: rgba(255,255,255,0.55);
+	  border-bottom: 1px solid rgba(106,191,75,0.08);
+	}
+	.fee-tr-virtual .fee-td-label { color: var(--teal-light); }
+	.fee-tr-virtual .fee-td-early { color: var(--teal-light); }
+	.fee-tr-virtual .fee-td-regular { color: rgba(184,232,154,0.45); }
+	.fee-table tr:last-child td { border-bottom: none; }
+	.fee-note {
+	  font-size: 0.68rem; letter-spacing: 0.06em;
+	  color: rgba(184,232,154,0.35); margin-top: 1rem;
+	  font-family: 'Outfit', sans-serif; font-weight: 300;
+	}
 
     .btn {
       display: inline-block;
@@ -1089,7 +1135,7 @@
         </div>
         <div class="date-card fade-in">
           <h3>Early Registration</h3>
-          <div class="date-value">15 MAY to 30 JULY</div>
+          <div class="date-value">25 MAY to 30 JULY</div>
           <p>Early-bird discounts available. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
         </div>
         <div class="date-card fade-in">
@@ -1155,23 +1201,44 @@
             class="btn btn-teal">Stay Updated</a>
         </div>
         <div class="register-right fade-in">
-          <div class="fee-row featured">
-            <span class="fee-label">Academic / Standard</span>
-            <span class="fee-price">TBA</span>
-          </div>
-          <div class="fee-row">
-            <span class="fee-label">Student</span>
-            <span class="fee-price">Reduced fee</span>
-          </div>
-          <div class="fee-row">
-            <span class="fee-label">Low-income country</span>
-            <span class="fee-price">Reduced fee</span>
-          </div>
-          <div class="fee-row">
-            <span class="fee-label">Virtual Listener</span>
-            <span class="fee-price">Reduced fee</span>
-          </div>
-        </div>
+		  <table class="fee-table">
+			<thead>
+			  <tr>
+				<th class="fee-th-label"></th>
+				<th class="fee-th-early">Early</th>
+				<th class="fee-th-regular">Regular</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td class="fee-td-label">Delegates – Standard</td>
+				<td class="fee-td-early">€ 400</td>
+				<td class="fee-td-regular">€ 470</td>
+			  </tr>
+			  <tr>
+				<td class="fee-td-label">PhD / Students – LMI Countries Standard</td>
+				<td class="fee-td-early">€ 300</td>
+				<td class="fee-td-regular">€ 370</td>
+			  </tr>
+			  <tr>
+				<td class="fee-td-label">Delegates – Light</td>
+				<td class="fee-td-early">€ 330</td>
+				<td class="fee-td-regular">€ 400</td>
+			  </tr>
+			  <tr>
+				<td class="fee-td-label">PhD / Students – LMI Countries Light</td>
+				<td class="fee-td-early">€ 230</td>
+				<td class="fee-td-regular">€ 300</td>
+			  </tr>
+			  <tr class="fee-tr-virtual">
+				<td class="fee-td-label">Virtual fees</td>
+				<td class="fee-td-early">€ 40</td>
+				<td class="fee-td-regular">€ 50</td>
+			  </tr>
+			</tbody>
+		  </table>
+		  <p class="fee-note">Prezzi IVA inclusa (22%).</p>
+		</div>
       </div>
     </div>
   </section>
