@@ -440,89 +440,96 @@
     }
 
     .speakers-grid.feature-grid {
-	  grid-template-columns: 1fr;
-	  max-width: 1000px;
-	  margin: 0 auto;
-	  padding: 0 2rem;
-	}
+      grid-template-columns: 1fr;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
 
-	.speaker-card.feature {
-	  display: grid;
-	  grid-template-columns: 120px 1fr;
-	  gap: 1.5rem 1.2rem;
-	  align-items: start;
-	  padding: 0;
-	  border: none;
-	  margin-bottom: 1.5rem;
-	}
+    .speaker-card.feature {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-	.speaker-card.feature .speaker-avatar {
-	  width: 120px;
-	  height: 120px;
-	  margin: 0;
-	  grid-row: 1 / 4;
-	  border-radius: 50%;
-	  overflow: hidden;
-	  flex-shrink: 0;
-	}
+    .speaker-card.feature:last-child { border-bottom: none; }
 
-	.speaker-card.feature .speaker-name {
-	  grid-column: 2;
-	  margin-bottom: 0.1rem;
-	  line-height: 1.2;
-	  font-size: 1.3rem;
-	}
+    .speaker-card.feature .speaker-avatar {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0;
+    }
 
-	.speaker-card.feature .speaker-role {
-	  grid-column: 2;
-	  margin-bottom: 0.5rem;
-	  margin-top: 0;
-	  font-weight: 500;
-	}
+    .speaker-card.feature .read-bio-under {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #d4a574;
+      text-align: center;
+      margin-top: 0.5rem;
+      white-space: nowrap;
+    }
 
-	.speaker-card.feature .speaker-bio {
-	  grid-column: 2;
-	  margin-bottom: 0.5rem;
-	  margin-top: 0;
-	  font-size: 0.85rem;
-	  line-height: 1.5;
-	}
+    .speaker-card.feature .speaker-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
 
-	.speaker-card.feature .speaker-focus {
-	  grid-column: 2;
-	  font-size: 0.65rem;
-	  margin-top: 0.3rem;
-	}
+    .speaker-card.feature .speaker-info {
+      flex: 1;
+    }
 
-	.speaker-card.feature > div:last-child {
-	  grid-column: 1;
-	  grid-row: 2;
-	  text-align: center;
-	  margin-top: 0.8rem;
-	  font-size: 0.65rem;
-	}
+    .speaker-card.feature .speaker-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      color: var(--dark);
+      margin-bottom: 0.1rem;
+      line-height: 1.2;
+    }
+
+    .speaker-card.feature .speaker-role {
+      font-size: 0.7rem;
+      color: var(--teal-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .speaker-card.feature .speaker-bio {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: var(--text-body);
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    .speaker-card.feature .speaker-focus {
+      display: inline-block;
+      background: var(--rose-pale);
+      color: var(--rose);
+      padding: 0.3rem 0.9rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-top: 0;
+    }
 
 	@media (max-width: 768px) {
 	  .speaker-card.feature {
-		grid-template-columns: 1fr;
-	  }
-
-	  .speaker-card.feature .speaker-avatar {
-		width: 100px;
-		height: 100px;
-		margin: 0 auto;
-		grid-row: 1;
-	  }
-
-	  .speaker-card.feature .speaker-name,
-	  .speaker-card.feature .speaker-role,
-	  .speaker-card.feature .speaker-bio,
-	  .speaker-card.feature .speaker-focus {
-		grid-column: 1;
-	  }
-
-	  .speaker-card.feature .speaker-bio {
-		font-size: 0.78rem;
+	    flex-direction: column;
+	    align-items: center;
+	    text-align: center;
 	  }
 	}
 		
@@ -1288,14 +1295,18 @@
         </div>
         <div class="speakers-grid feature-grid">
           <div class="speaker-card feature fade-in" onclick="openSpeaker('girolami')" style="cursor:pointer;">
-            <div class="speaker-avatar">
-              <img src="/images/girolami.jpg" alt="Dario Doshin Girolami" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            <div class="speaker-left">
+              <div class="speaker-avatar">
+                <img src="/images/girolami.jpg" alt="Dario Doshin Girolami" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+              </div>
+              <div class="read-bio-under">Read bio →</div>
             </div>
-            <div class="speaker-name">Dario Doshin Girolami</div>
-            <div class="speaker-role">Zen Abbot · Teacher</div>
-            <p class="speaker-bio">Abbot of the Zen Center L'Arco — Zenmon Ji and recognized teacher of the Japanese Sotoshu. Trained in monasteries across the US and studied under Thich Nhat Hanh, Reb Anderson, and received initiation from the Dalai Lama. He founded the Chaplains Network of the European Buddhist Union.</p>
-            <span class="speaker-focus">Zen Practice &amp; Buddhism</span>
-            <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:#d4a574; font-family:'Outfit',sans-serif;">Read bio →</div>
+            <div class="speaker-info">
+              <div class="speaker-name">Dario Doshin Girolami</div>
+              <div class="speaker-role">Zen Abbot · Teacher</div>
+              <p class="speaker-bio">Abbot of the Zen Center L'Arco — Zenmon Ji and recognized teacher of the Japanese Sotoshu. Trained in monasteries across the US and studied under Thich Nhat Hanh, Reb Anderson, and received initiation from the Dalai Lama. He founded the Chaplains Network of the European Buddhist Union.</p>
+              <span class="speaker-focus">Zen Practice &amp; Buddhism</span>
+            </div>
           </div>
         </div>
       </div>
