@@ -441,16 +441,17 @@
 
     .speakers-grid.feature-grid {
 	  grid-template-columns: 1fr;
-	  max-width: 1000px;  /* aggiungi questo */
-	  margin: 0 auto;    /* e questo per centrare */
+	  max-width: 1000px;
+	  margin: 0 auto;
+	  padding: 0 2rem;
 	}
 
 	.speaker-card.feature {
 	  display: grid;
-	  grid-template-columns: 80px 1fr;
-	  gap: 1.2rem;
+	  grid-template-columns: 120px 1fr;
+	  gap: 2rem;
 	  align-items: start;
-	  padding: 0.8rem;
+	  padding: 2rem 0;
 	  border: none;
 	}
 
@@ -459,32 +460,37 @@
 	  height: 120px;
 	  margin: 0;
 	  grid-row: 1 / 4;
+	  border-radius: 50%;
+	  overflow: hidden;
+	  flex-shrink: 0;
 	}
 
 	.speaker-card.feature .speaker-name {
 	  grid-column: 2;
-	  margin-bottom: 0;
-	  line-height: 1.1;
+	  margin-bottom: 0.3rem;
+	  line-height: 1.3;
+	  font-size: 1.4rem;
 	}
 
 	.speaker-card.feature .speaker-role {
 	  grid-column: 2;
-	  margin-bottom: 0.3rem;
-	  margin-top: -0.2rem;
+	  margin-bottom: 1rem;
+	  margin-top: 0;
+	  font-weight: 500;
 	}
 
 	.speaker-card.feature .speaker-bio {
 	  grid-column: 2;
-	  margin-bottom: 0.3rem;
-	  margin-top: -0.1rem;
-	  font-size: 0.75rem;
-	  line-height: 1.5;
+	  margin-bottom: 1rem;
+	  margin-top: 0;
+	  font-size: 0.9rem;
+	  line-height: 1.6;
 	}
 
 	.speaker-card.feature .speaker-focus {
 	  grid-column: 2;
-	  font-size: 0.6rem;
-	  margin-top: 0;
+	  font-size: 0.7rem;
+	  margin-top: 0.5rem;
 	}
 
 	@media (max-width: 768px) {
