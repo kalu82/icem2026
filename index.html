@@ -320,7 +320,6 @@
 
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
       gap: 2px;
       background: var(--border);
     }
@@ -396,6 +395,78 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 400;
+    }
+
+    /* ============ SPEAKERS CATEGORY SECTION ============ */
+    .speakers-category {
+      margin-bottom: 4rem;
+    }
+
+    .speakers-category.feature {
+      border-top: 2px solid var(--border);
+      padding-top: 3rem;
+      margin-top: 3rem;
+    }
+
+    .speakers-category-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .speakers-category-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .speakers-category-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .speakers-category-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      font-weight: 300;
+    }
+
+    .speakers-grid.keynote-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .speakers-grid.feature-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .speaker-card.keynote {
+      border-left: 4px solid #2c5aa0;
+    }
+
+    .speaker-card.feature {
+      border-left: 4px solid #d4a574;
+    }
+
+    @media (max-width: 1200px) {
+      .speakers-grid.keynote-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .speakers-grid.keynote-grid,
+      .speakers-grid.feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .speakers-category.feature {
+        margin-top: 2rem;
+        padding-top: 2rem;
+      }
     }
 
     /* ============ SPEAKER MODAL ============ */
@@ -1087,58 +1158,73 @@
         <h2>Keynote <em style="font-style:italic; color:var(--teal-dark);">Speakers</em></h2>
         <p>Distinguished voices from philosophy, psychology, sustainability science, and contemplative studies</p>
       </div>
-      <div class="speakers-grid">
-        <div class="speaker-card fade-in" onclick="openSpeaker('loy')" style="cursor:pointer;">
-          <div class="speaker-avatar">
-            <img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+
+      <!-- KEYNOTE SPEAKERS -->
+      <div class="speakers-category keynote">
+        <div class="speakers-grid keynote-grid">
+          <div class="speaker-card keynote fade-in" onclick="openSpeaker('loy')" style="cursor:pointer;">
+            <div class="speaker-avatar">
+              <img src="/images/loy.jpg" alt="David Loy" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            </div>
+            <div class="speaker-name">David Loy</div>
+            <div class="speaker-role">Philosopher · Author</div>
+            <p class="speaker-bio">A leading voice at the intersection of Zen Buddhism and social thought, David Loy has written extensively on ecological crisis, the role of inner transformation in addressing environmental challenges, and Buddhist perspectives on sustainability.</p>
+            <span class="speaker-focus">Buddhism &amp; Ecology</span>
+            <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
           </div>
-          <div class="speaker-name">David Loy</div>
-          <div class="speaker-role">Philosopher · Author</div>
-          <p class="speaker-bio">A leading voice at the intersection of Zen Buddhism and social thought, David Loy has written extensively on ecological crisis, the role of inner transformation in addressing environmental challenges, and Buddhist perspectives on sustainability.</p>
-          <span class="speaker-focus">Buddhism &amp; Ecology</span>
-          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
-        </div>
-        <div class="speaker-card fade-in" onclick="openSpeaker('wamsler')" style="cursor:pointer;">
-          <div class="speaker-avatar">
-            <img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          <div class="speaker-card keynote fade-in" onclick="openSpeaker('wamsler')" style="cursor:pointer;">
+            <div class="speaker-avatar">
+              <img src="/images/wamsler.jpg" alt="Christine Wamsler" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            </div>
+            <div class="speaker-name">Christine Wamsler</div>
+            <div class="speaker-role">Professor · Lund University</div>
+            <p class="speaker-bio">Professor at Lund University's Centre for Sustainability Studies, Christine Wamsler's research explores the links between mindfulness, inner development, and sustainability transformations, pioneering the field of contemplative sustainability science.</p>
+            <span class="speaker-focus">Inner Sustainability</span>
+            <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
           </div>
-          <div class="speaker-name">Christine Wamsler</div>
-          <div class="speaker-role">Professor · Lund University</div>
-          <p class="speaker-bio">Professor at Lund University's Centre for Sustainability Studies, Christine Wamsler's research explores the links between mindfulness, inner development, and sustainability transformations, pioneering the field of contemplative sustainability science.</p>
-          <span class="speaker-focus">Inner Sustainability</span>
-          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
-        </div>
-        <div class="speaker-card fade-in" onclick="openSpeaker('labranche')" style="cursor:pointer;">
-          <div class="speaker-avatar">
-            <img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          <div class="speaker-card keynote fade-in" onclick="openSpeaker('labranche')" style="cursor:pointer;">
+            <div class="speaker-avatar">
+              <img src="/images/labranche.jpg" alt="Stéphane Labranche" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            </div>
+            <div class="speaker-name">Stéphane Labranche</div>
+            <div class="speaker-role">Researcher · Social Sciences</div>
+            <p class="speaker-bio">Stéphane Labranche is an independent sociologist and IPCC expert reviewer specializing in climate, energy, and biodiversity transitions, with over 50 research projects informing national and territorial climate strategies across France.</p>
+            <span class="speaker-focus">Climate Behavior</span>
+            <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
           </div>
-          <div class="speaker-name">Stéphane Labranche</div>
-          <div class="speaker-role">Researcher · Social Sciences</div>
-          <p class="speaker-bio">Stéphane Labranche is an independent sociologist and IPCC expert reviewer specializing in climate, energy, and biodiversity transitions, with over 50 research projects informing national and territorial climate strategies across France.</p>
-          <span class="speaker-focus">Climate Behavior</span>
-          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
-        </div>
-		<div class="speaker-card fade-in" onclick="openSpeaker('bonaiuto')" style="cursor:pointer;">
-          <div class="speaker-avatar">
-            <img src="/images/bonaiuto.jpg" alt="Marino Bonaiuto" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+          <div class="speaker-card keynote fade-in" onclick="openSpeaker('bonaiuto')" style="cursor:pointer;">
+            <div class="speaker-avatar">
+              <img src="/images/bonaiuto.jpg" alt="Marino Bonaiuto" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            </div>
+            <div class="speaker-name">Marino Bonaiuto</div>
+            <div class="speaker-role">Professor · Sapienza, University of Rome</div>
+            <p class="speaker-bio">Environmental psychologist and IAAP Division President-elect, Prof. Marino Bonaiuto (Sapienza University of Rome) specializes in social acceptance of ecological transition and environmental psychology.</p>
+            <span class="speaker-focus">Environmental awareness</span>
+            <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
           </div>
-          <div class="speaker-name">Marino Bonaiuto</div>
-          <div class="speaker-role">Professor · Sapienza, University of Rome</div>
-          <p class="speaker-bio">Environmental psychologist and IAAP Division President-elect, Prof. Marino Bonaiuto (Sapienza University of Rome) specializes in social acceptance of ecological transition and environmental psychology.</p>
-          <span class="speaker-focus">Environmental awareness</span>
-          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
-        </div>
-		<div class="speaker-card fade-in" onclick="openSpeaker('girolami')" style="cursor:pointer;">
-          <div class="speaker-avatar">
-            <img src="/images/girolami.jpg" alt="Dario Doshin Girolami" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
-          </div>
-          <div class="speaker-name">Dario Doshin Girolami</div>
-          <div class="speaker-role">Zen Abbot · Teacher</div>
-          <p class="speaker-bio">Abbot of the Zen Center L'Arco — Zenmon Ji and recognized teacher of the Japanese Sotoshu. Trained in monasteries across the US and studied under Thich Nhat Hanh, Reb Anderson, and received initiation from the Dalai Lama. He founded the Chaplains Network of the European Buddhist Union.</p>
-          <span class="speaker-focus">Zen Practice &amp; Buddhism</span>
-          <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); font-family:'Outfit',sans-serif;">Read bio →</div>
         </div>
       </div>
+
+      <!-- FEATURE SPEAKERS -->
+      <div class="speakers-category feature">
+        <div class="speakers-category-header">
+          <h3 class="speakers-category-title">Feature <em>Speakers</em></h3>
+          <p class="speakers-category-subtitle">Contemplative practitioners and invited voices</p>
+        </div>
+        <div class="speakers-grid feature-grid">
+          <div class="speaker-card feature fade-in" onclick="openSpeaker('girolami')" style="cursor:pointer;">
+            <div class="speaker-avatar">
+              <img src="/images/girolami.jpg" alt="Dario Doshin Girolami" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+            </div>
+            <div class="speaker-name">Dario Doshin Girolami</div>
+            <div class="speaker-role">Zen Abbot · Teacher</div>
+            <p class="speaker-bio">Abbot of the Zen Center L'Arco — Zenmon Ji and recognized teacher of the Japanese Sotoshu. Trained in monasteries across the US and studied under Thich Nhat Hanh, Reb Anderson, and received initiation from the Dalai Lama. He founded the Chaplains Network of the European Buddhist Union.</p>
+            <span class="speaker-focus">Zen Practice &amp; Buddhism</span>
+            <div style="margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:#d4a574; font-family:'Outfit',sans-serif;">Read bio →</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
