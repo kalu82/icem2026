@@ -1078,6 +1078,43 @@
       .section-about, .section-topics, .section-speakers,
       .section-venue, .section-dates, .section-register { padding: 3.5rem 0; }
     }
+	
+	/* ============ COMMITTEE ============ */
+	 .committee-list {
+      list-style:none;
+      max-width: 900px;
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3.5rem;
+    }
+    .committee-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(106,191,75,0.15);
+    }
+    .committee-name {
+      font-family:'Outfit', sans-serif;
+      font-size:0.92rem;
+      font-weight:500;
+      color:#fff;
+      white-space:nowrap;
+    }
+    .committee-affil {
+      font-family:'Outfit', sans-serif;
+      font-size:0.8rem;
+      font-weight:300;
+      color: rgba(184,232,154,0.65);
+      text-align:right;
+    }
+    @media (max-width: 768px) {
+      .committee-list { grid-template-columns: 1fr; }
+      .committee-row { flex-direction:column; align-items:flex-start; gap:0.2rem; }
+      .committee-affil { text-align:left; }
+    }
   </style>
 </head>
 <body>
@@ -1093,7 +1130,7 @@
 	  <li><a href="speaker-info.html">Speaker Info</a></li><li><a href="#about">About</a></li>
 	  <li><a href="#topics">Topics</a></li>
       <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#dates">Dates</a></li>
+      <li><a href="#committee">Committee</a></li>
       <li><a href="#venue">Venue</a></li>
 	  <li><a href="#partners">Partners</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1339,43 +1376,34 @@
     </div>
   </div>
 
-  <!-- ============ DATES ============ -->
-  <section class="section-dates" id="dates">
+  <!-- ============ COMMITTE ============ -->
+  <section class="section-topics" id="committee" style="padding:5rem 0;">
     <div class="container">
-      <div class="dates-header fade-in">
-        <div class="section-tag" style="justify-content:center;">Key Dates</div>
-        <h2>Important <em style="font-style:italic; color:var(--rose);">Dates</em></h2>
-      </div>
-      <div class="dates-grid">
-        <div class="date-card fade-in">
-          <h3>Abstract Submission</h3>
-          <div class="date-value">EXTENDED TO 10 JULY</div>
-          <p>Submit your abstract for oral or poster presentation. Interdisciplinary work bridging mindfulness and environmental science is especially welcome.</p>
-          <a href="https://docs.google.com/forms/d/1bSFKs55_mZFjLvHSORZZGv0Tx7fXWE0-ZE67sC71d2c/viewform" target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:1.2rem; font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-dark); text-decoration:none; font-weight:500; font-family:'Outfit',sans-serif; transition:color 0.2s;"
-            onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--teal-dark)'">
-            Submit your abstract →
-          </a>
-        </div>
-        <div class="date-card fade-in">
-          <h3>Response Notification</h3>
-          <div class="date-value">10 JULY</div>
-          <p>Authors will be notified of acceptance decisions for their abstract submissions.</p>
-        </div>
-        <div class="date-card fade-in">
-          <h3>Early Registration</h3>
-          <div class="date-value">10 JUNE to 30 JULY</div>
-          <p>Early-bird discounts available. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
-        </div>
-        <div class="date-card fade-in">
-          <h3>Late Registration</h3>
-          <div class="date-value">since 1 AUGUST</div>
-          <p>Standard registration rates apply. Reduced fees for students, researchers from low-income countries, and virtual participants.</p>
+      <div class="topics-header fade-in" style="grid-template-columns:1fr; text-align:center; margin-bottom:2.5rem;">
+        <div>
+          <div class="section-tag" style="justify-content:center; color:var(--teal-light);">Who's Behind ICEM</div>
+          <h2>Scientific <em style="font-style:italic; color:var(--rose); font-family:'Cormorant Garamond',serif;">Committee</em></h2>
         </div>
       </div>
-    </div>
-  </section>
-
+      <ul class="committee-list">
+        <li class="committee-row fade-in"><span class="committee-name">Antonino Raffone</span><span class="committee-affil">Sapienza University of Rome, Italy</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Bassam El-Khoury</span><span class="committee-affil">McGill University, Canada</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Freddie Lymeus</span><span class="committee-affil">Uppsala University, Sweden</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Johannes Karl</span><span class="committee-affil">University of Zurich, Switzerland</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Lia Antico</span><span class="committee-affil">Mindfulness Center, Brown University, USA</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Liane Stephan</span><span class="committee-affil">Inner Green Deal</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Luca Simione</span><span class="committee-affil">UNINT — Università degli Studi Internazionali di Roma</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Mirko Duradoni</span><span class="committee-affil">Mercatorum University, Rome, Italy</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Oriana Mosca</span><span class="committee-affil">University of Cagliari, Italy</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Pascal Frank</span><span class="committee-affil">Wageningen University & Research, The Netherlands</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Patrizio Paoletti Foundation</span><span class="committee-affil">Research Institute for Neuroscience, Education and Didactics (RINED)</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Salvatore Gaetano Chiarella</span><span class="committee-affil">UNINT — Università degli Studi Internazionali di Roma</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Serena C. Colombo</span><span class="committee-affil">Sapienza University of Rome / UNINT, Italy</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Susanne Krämer</span><span class="committee-affil">Leipzig University, Germany</span></li>
+        <li class="committee-row fade-in"><span class="committee-name">Valentina Carfora</span><span class="committee-affil">Catholic University of the Sacred Heart, Italy</span></li>
+      </ul>
+	</div>
+  </section>	
   <!-- ============ VENUE ============ -->
   <section class="section-venue" id="venue">
     <div class="container">
