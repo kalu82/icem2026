@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICEM 2026 — Speaker &amp; Presenter Information</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #6abf4b;
+    --teal-dark: #4a9a2a;
+    --teal-light: #b8e89a;
+    --rose: #f07040;
+    --rose-light: #f9c0a0;
+    --rose-pale: #fef0e8;
+    --dark: #1a2a1a;
+    --dark-2: #243824;
+    --white: #ffffff;
+    --off-white: #f8fbfb;
+    --text-body: #2c4a52;
+    --text-muted: #6a8f96;
+    --border: rgba(106,191,75,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: clip;
+  }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 3rem; }
+  @media (max-width: 900px) { .container { padding: 0 1.5rem; } }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-logo { display:flex; align-items:center; gap:0.7rem; text-decoration:none; }
+  .topbar-title {
+    font-family:'Outfit',sans-serif; font-size:0.82rem; font-weight:500;
+    letter-spacing:0.08em; color:var(--teal-dark); text-transform:uppercase;
+  }
+  .topbar-back {
+    font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+    color: var(--text-muted); text-decoration:none; font-weight:400;
+  }
+  .topbar-back:hover { color: var(--teal-dark); }
+
+  /* ============ HERO ============ */
+  .hero {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3.5rem, 6vw, 5rem);
+  }
+  .hero::before {
+    content:'';
+    position:absolute; bottom:-120px; right:-120px;
+    width:480px; height:480px; border-radius:50%;
+    background: radial-gradient(circle, rgba(106,191,75,0.12) 0%, transparent 65%);
+    pointer-events:none;
+  }
+  .hero::after {
+    content:'';
+    position:absolute; top:-80px; left:-80px;
+    width:320px; height:320px; border-radius:50%;
+    background: radial-gradient(circle, rgba(240,112,64,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-tag {
+    display:inline-flex; align-items:center; gap:0.6rem;
+    font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase;
+    color: var(--teal-light); margin-bottom: 1.6rem; position:relative; z-index:1;
+  }
+  .hero-tag::before { content:''; display:block; width:24px; height:1px; background:var(--teal); }
+  .hero h1 {
+    position:relative; z-index:1;
+    font-family:'Bebas Neue',sans-serif; font-weight:400;
+    font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+    letter-spacing:0.04em; line-height:1.02; color:#fff;
+    max-width: 780px;
+  }
+  .hero h1 .accent-teal { color: var(--teal); }
+  .hero h1 .accent-rose { color: var(--rose); }
+  .hero .lede {
+    position:relative; z-index:1;
+    font-size:1rem; line-height:1.75; color: rgba(255,255,255,0.8);
+    max-width: 560px; font-weight:300; margin-top:1.6rem;
+  }
+  .hero-meta {
+    position:relative; z-index:1;
+    display:flex; gap:2.5rem; flex-wrap:wrap; margin-top: 2.4rem;
+  }
+  .hero-meta .item span { display:block; }
+  .hero-meta .label {
+    font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase;
+    color: rgba(255,255,255,0.45); margin-bottom:0.2rem;
+  }
+  .hero-meta .value {
+    font-family:'Bebas Neue',sans-serif; font-size:1.2rem; color:#fff; letter-spacing:0.05em;
+  }
+
+  /* ============ SECTION SHARED ============ */
+  section.block { padding: 4.5rem 0; }
+  .section-tag {
+    display:inline-flex; align-items:center; gap:0.6rem;
+    font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase;
+    color: var(--teal-dark); font-weight:400; margin-bottom: 1.6rem;
+  }
+  .section-tag::before { content:''; display:block; width:20px; height:1px; background: var(--teal); }
+  .block h2 {
+    font-family:'Bebas Neue',sans-serif; font-weight:400;
+    font-size: clamp(2rem, 3.4vw, 3rem); letter-spacing:0.05em; line-height:1.15;
+    color: var(--dark); margin-bottom: 1.8rem;
+  }
+  .block h2 em { font-style:italic; color: var(--rose); font-family:'Cormorant Garamond',serif; font-weight:400; }
+  .block p { font-size:0.95rem; line-height:1.9; color: var(--text-body); font-weight:300; margin-bottom:1.1rem; max-width: 760px; }
+  .block p strong { color: var(--dark); font-weight:500; }
+  h3.sub {
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:400;
+    font-size:1.5rem; color: var(--dark); margin: 1.8rem 0 0.7rem;
+  }
+
+  .section-about { background: var(--off-white); }
+  .section-food { background: var(--white); }
+  .section-accom { background: var(--off-white); }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--rose);
+    background: var(--rose-pale);
+    padding: 1.5rem 1.8rem;
+    max-width: 760px;
+    margin-top: 1.8rem;
+  }
+  .callout p { margin:0; font-size:0.9rem; color: var(--text-body); }
+  .callout p strong { color: var(--dark); }
+
+  /* ============ HOTEL / DATE-CARD STYLE ============ */
+  .date-card {
+    border: 1px solid var(--border);
+    padding: 2rem 2.2rem;
+    transition: border-color 0.3s;
+    max-width: 760px;
+    margin-top: 1.6rem;
+  }
+  .date-card:hover { border-color: var(--teal); }
+  .date-card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; flex-wrap:wrap; margin-bottom: 0.8rem; }
+  .date-status {
+    font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase;
+    padding:0.25rem 0.7rem; font-weight:400;
+    background: rgba(106,191,75,0.1); color: var(--teal-dark); white-space:nowrap;
+  }
+  .date-card h3.hotel-name {
+    font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:400; color: var(--dark); margin:0;
+  }
+  .date-card p { font-size:0.88rem; color: var(--text-muted); line-height:1.7; margin: 0.6rem 0 0; font-weight:300; }
+
+  .btn {
+    display:inline-block; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+    font-weight:400; text-decoration:none; padding: 0.85rem 2.2rem; transition: all 0.25s;
+  }
+  .btn-teal { background: var(--teal); color: var(--white); }
+  .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent; color: var(--teal-dark); border: 1px solid var(--teal);
+  }
+  .btn-outline:hover { background: var(--teal); color: #fff; }
+
+  .link-arrow {
+    display:inline-flex; align-items:center; gap:0.4rem; margin-top:1rem;
+    font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase;
+    color: var(--teal-dark); text-decoration:none; font-weight:500; transition:color 0.2s;
+  }
+  .link-arrow:hover { color: var(--teal); }
+
+  /* ============ FOOD GRID (topics-style, dark) ============ */
+  .section-food-dark { background: var(--dark); }
+  .food-grid {
+    display:grid; grid-template-columns: repeat(4, 1fr); gap:1px;
+    background: rgba(106,191,75,0.15); margin-top: 2rem;
+  }
+  @media (max-width: 900px) { .food-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .food-grid { grid-template-columns: 1fr; } }
+  .food-card {
+    background: var(--dark-2); padding: 2rem 1.8rem; position:relative; overflow:hidden;
+    transition: background 0.3s;
+  }
+  .food-card::before {
+    content:''; position:absolute; top:0; left:0; width:3px; height:0;
+    background: linear-gradient(to bottom, var(--teal), var(--rose));
+    transition: height 0.4s ease;
+  }
+  .food-card:hover::before { height:100%; }
+  .food-card:hover { background: rgba(106,191,75,0.06); }
+  .food-num {
+    font-family:'Cormorant Garamond', serif; font-size:0.85rem; color: var(--teal); opacity:0.5; margin-bottom:0.9rem;
+  }
+  .food-title {
+    font-family:'Outfit', sans-serif; font-size:1.05rem; font-weight:500; color:#fff; line-height:1.3; margin-bottom:0.6rem;
+  }
+  .food-desc {
+    font-family:'Outfit', sans-serif; font-size:0.8rem; line-height:1.7; color: rgba(184,232,154,0.65); font-weight:300; margin-bottom:1rem;
+  }
+  .food-card .link-arrow { color: var(--teal-light); }
+  .food-card .link-arrow:hover { color: var(--rose-light); }
+
+  .canteen-note {
+    max-width:760px; margin-top:0; border:1px solid var(--border);
+    padding:1.5rem 1.8rem; background: var(--off-white);
+  }
+  .canteen-note p { margin:0; font-size:0.92rem; color: var(--text-body); }
+
+  /* ============ CONTACT (dark, reused pattern) ============ */
+  .section-contact { background: var(--dark); padding: 4.5rem 0; }
+  .contact-inner { display:grid; grid-template-columns: 1fr; gap:2rem; max-width: 700px; }
+  .contact-tag { color: var(--teal-light); }
+  .contact-h2 {
+    font-family:'Bebas Neue',sans-serif; font-size:clamp(2.2rem,4vw,3.4rem);
+    color:#fff; letter-spacing:0.05em; margin-bottom:1.2rem; line-height:1.05;
+  }
+  .contact-p { font-size:0.93rem; line-height:1.8; color: rgba(184,232,154,0.75); font-weight:300; margin-bottom:1.8rem; max-width:600px;}
+  .contact-row { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+  .contact-icon {
+    width:36px; height:36px; background: rgba(106,191,75,0.15); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-row a, .contact-row span { color: var(--teal-light); font-size:0.9rem; text-decoration:none; font-weight:300; }
+  .contact-actions { margin-top:1.6rem; display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn-outline-light {
+    background: transparent; border:1px solid rgba(184,232,154,0.4); color: var(--teal-light);
+  }
+  .btn-outline-light:hover { border-color: var(--teal); color:#fff; }
+
+  footer {
+    padding: 2rem 3rem; display:flex; justify-content:space-between; align-items:center;
+    background: var(--dark); border-top: 1px solid rgba(106,191,75,0.15); flex-wrap:wrap; gap:1rem;
+  }
+  .footer-logo { font-family:'Cormorant Garamond', serif; font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; color: var(--teal-light); }
+  .footer-contact { font-size:0.78rem; color: rgba(184,232,154,0.5); }
+  .footer-contact a { color: var(--teal-light); text-decoration:none; }
+
+  @media (max-width: 900px) {
+    .topbar { padding: 1rem 1.5rem; }
+    section.block { padding: 3rem 0; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a class="topbar-logo" href="https://www.environmentalmindfulness.org/">
+      <img src="https://www.environmentalmindfulness.org/images/ICEM_logo.png" alt="ICEM Logo" style="height:38px; object-fit:contain;">
+      <span class="topbar-title">ICEM 2026</span>
+    </a>
+    <a class="topbar-back" href="https://www.environmentalmindfulness.org/">← Back to conference site</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag">For Accepted Speakers &amp; Presenters</span>
+      <h1>Speaker &amp; Presenter<br><span class="accent-teal">Information</span></h1>
+      <p class="lede">Everything you need to prepare your presentation and plan your stay in Rome for the International Conference on Environmental Mindfulness.</p>
+      <div class="hero-meta">
+        <div class="item"><span class="label">Dates</span><span class="value">17–19 September 2026</span></div>
+        <div class="item"><span class="label">Venue</span><span class="value">UNINT, Rome</span></div>
+        <div class="item"><span class="label">Format</span><span class="value">In person + Virtual</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRESENTING ============ -->
+  <section class="block section-about" id="presenting">
+    <div class="container">
+      <div class="section-tag">How to Prepare</div>
+      <h2>Preparing Your <em>Presentation</em></h2>
+
+      <h3 class="sub">Oral presentations</h3>
+      <p>Oral presentations are allotted <strong>20 minutes</strong>, followed by <strong>5–10 minutes for Q&amp;A</strong>. Please plan your slides accordingly and rehearse your timing in advance — session chairs will need to keep to schedule for everyone's sake. A laptop and projector will be available in each room; we recommend bringing your slides on a USB drive as a backup, and arriving at your session room a few minutes early to test your file. The standard format is <strong>16:9 (widescreen)</strong>, and <strong>PDF</strong> is the safest option if you are using fonts, animations, or embedded media that may not translate across systems.</p>
+
+      <h3 class="sub">Poster presentations</h3>
+      <p>Posters should be in <strong>portrait orientation, A0 size</strong> (84.1 × 118.9 cm) — please check the confirmation in your acceptance email in case a different size was specified for your session. Please <strong>bring your printed poster with you</strong>: there is no on-site printing service organised for the conference. That said, there are several print shops (<em>copisterie</em>) in the area around the venue if you need last-minute printing once you arrive in Rome. Poster boards, pins/tape, and a dedicated space during the poster session will be provided.</p>
+
+      <div class="callout">
+        <p><strong>Requesting a change of day or time.</strong> We have done our best to accommodate all the requests received so far when assigning days and time slots. If you would like to request a switch of day and/or time for your presentation, please let us know via the contact details below and we will do what we can to make it work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACCOMMODATION ============ -->
+  <section class="block section-accom" id="accommodation">
+    <div class="container">
+      <div class="section-tag">Where to Stay</div>
+      <h2>Accommodation</h2>
+      <p>We do not have an official hotel partnership for ICEM 2026, so we recommend booking through your usual channels. You may also find modest discounts through our dedicated travel page.</p>
+      <a href="http://www.myfirst.travel/icem2026" target="_blank" rel="noopener" class="btn btn-teal">Browse Discounted Stays →</a>
+
+      <div class="date-card">
+        <div class="date-card-top">
+          <h3 class="hotel-name">Precise House Mantegna</h3>
+          <span class="date-status">Rooms Available</span>
+        </div>
+        <p>Checked recently — a short distance from the venue, in the Garbatella area.</p>
+        <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJgQ3oBmaKJRMR9mRvE5xBTv8" target="_blank" rel="noopener">View on Google Maps →</a>
+      </div>
+
+      <p style="margin-top:1.8rem;">The area around UNINT (Garbatella / Via Cristoforo Colombo) has a good number of small and larger hotels nearby, so you should have no trouble finding something in your preferred range and location.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOD ============ -->
+  <section class="block section-food-dark" id="food">
+    <div class="container">
+      <div class="section-tag" style="color:var(--teal-light);">Where to Eat</div>
+      <h2 style="color:#fff;">Lunch <em>Options</em></h2>
+      <p style="color: rgba(184,232,154,0.75); max-width:700px;">The university's internal cafeteria offers a <strong style="color:#fff;">discounted rate for conference participants</strong> — a convenient and very affordable option right on site. If you'd like to explore the neighbourhood instead, here are a few places within easy walking distance of the venue:</p>
+
+      <div class="food-grid">
+        <div class="food-card">
+          <div class="food-num">01</div>
+          <div class="food-title">Il Secchio e l'Olivaro</div>
+          <div class="food-desc">A very accessible lunch menu, right on the same street as UNINT.</div>
+          <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJV5FDY3CKJRMRveZCL3f4gfY" target="_blank" rel="noopener">View on Maps →</a>
+        </div>
+        <div class="food-card">
+          <div class="food-num">02</div>
+          <div class="food-title">La Fornarina</div>
+          <div class="food-desc">An excellent neighbourhood bakery — great for a quick coffee or light lunch.</div>
+          <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJS6XQiHqKJRMRe1Q6IrY1wIk" target="_blank" rel="noopener">View on Maps →</a>
+        </div>
+        <div class="food-card">
+          <div class="food-num">03</div>
+          <div class="food-title">Antichi Sapori</div>
+          <div class="food-desc">A typical Roman trattoria, also just steps from the venue.</div>
+          <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJvWCygXqKJRMRYe9_0hgFV5o" target="_blank" rel="noopener">View on Maps →</a>
+        </div>
+        <div class="food-card">
+          <div class="food-num">04</div>
+          <div class="food-title">L'Acino Brillo</div>
+          <div class="food-desc">An excellent restaurant nearby, best for a proper sit-down lunch.</div>
+          <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJwcL5o3uKJRMRRPcCwi4WISs" target="_blank" rel="noopener">View on Maps →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section-contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="section-tag contact-tag">Get in Touch</div>
+        <h2 class="contact-h2">Questions? We're Here to Help</h2>
+        <p class="contact-p">If you have any questions — about registration, logistics, your presentation, or anything else — please don't hesitate to reach out to us directly. We want to make sure everything runs smoothly for you. We look forward to welcoming you to Rome and to ICEM 2026.</p>
+
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--teal)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <a href="mailto:icemindfulness@gmail.com">icemindfulness@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--teal)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <a href="mailto:eventi@grupposymposia.it">eventi@grupposymposia.it <span style="color:rgba(184,232,154,0.5); font-weight:300;">— Organising Partner</span></a>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--teal)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <span>UNINT, Rome, Italy</span>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn btn-teal" href="mailto:icemindfulness@gmail.com">Email the Organising Committee →</a>
+          <a class="btn btn-outline-light" href="https://www.environmentalmindfulness.org/">Back to Conference Site</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">ICEM 2026</span>
+    <span class="footer-contact">International Conference on Environmental Mindfulness · UNINT, Rome · <a href="mailto:icemindfulness@gmail.com">icemindfulness@gmail.com</a> · <a href="mailto:eventi@grupposymposia.it">eventi@grupposymposia.it</a></span>
+  </footer>
+
+</body>
+</html>
