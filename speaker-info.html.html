@@ -58,7 +58,7 @@
     background: var(--dark);
     position: relative;
     overflow: hidden;
-    padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(3.5rem, 6vw, 5rem);
+    padding: clamp(1rem, 8vw, 1rem) 0 clamp(1rem, 6vw, 1rem);
   }
   .hero::before {
     content:'';
@@ -108,7 +108,7 @@
   }
 
   /* ============ SECTION SHARED ============ */
-  section.block { padding: 4.5rem 0; }
+  section.block { padding: 1.5rem 0; }
   .section-tag {
     display:inline-flex; align-items:center; gap:0.6rem;
     font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase;
@@ -137,7 +137,7 @@
     border: 1px solid var(--border);
     border-left: 3px solid var(--rose);
     background: var(--rose-pale);
-    padding: 1.5rem 1.8rem;
+    padding: 1rem 1rem;
     max-width: 760px;
     margin-top: 1.8rem;
   }
@@ -147,7 +147,7 @@
   /* ============ HOTEL / DATE-CARD STYLE ============ */
   .date-card {
     border: 1px solid var(--border);
-    padding: 2rem 2.2rem;
+    padding: 1rem 1.2rem;
     transition: border-color 0.3s;
     max-width: 760px;
     margin-top: 1.6rem;
@@ -166,7 +166,7 @@
 
   .btn {
     display:inline-block; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
-    font-weight:400; text-decoration:none; padding: 0.85rem 2.2rem; transition: all 0.25s;
+    font-weight:400; text-decoration:none; padding: 0.85rem 1.2rem; transition: all 0.25s;
   }
   .btn-teal { background: var(--teal); color: var(--white); }
   .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); }
@@ -191,7 +191,7 @@
   @media (max-width: 900px) { .food-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px) { .food-grid { grid-template-columns: 1fr; } }
   .food-card {
-    background: var(--dark-2); padding: 2rem 1.8rem; position:relative; overflow:hidden;
+    background: var(--dark-2); padding: 1rem 0.8rem; position:relative; overflow:hidden;
     transition: background 0.3s;
   }
   .food-card::before {
@@ -215,12 +215,12 @@
 
   .canteen-note {
     max-width:760px; margin-top:0; border:1px solid var(--border);
-    padding:1.5rem 1.8rem; background: var(--off-white);
+    padding:0.5rem 0.8rem; background: var(--off-white);
   }
   .canteen-note p { margin:0; font-size:0.92rem; color: var(--text-body); }
 
   /* ============ CONTACT (dark, reused pattern) ============ */
-  .section-contact { background: var(--dark); padding: 4.5rem 0; }
+  .section-contact { background: var(--dark); padding: 1.5rem 0; }
   .contact-inner { display:grid; grid-template-columns: 1fr; gap:2rem; max-width: 700px; }
   .contact-tag { color: var(--teal-light); }
   .contact-h2 {
@@ -241,7 +241,7 @@
   .btn-outline-light:hover { border-color: var(--teal); color:#fff; }
 
   footer {
-    padding: 2rem 3rem; display:flex; justify-content:space-between; align-items:center;
+    padding: 1rem 1rem; display:flex; justify-content:space-between; align-items:center;
     background: var(--dark); border-top: 1px solid rgba(106,191,75,0.15); flex-wrap:wrap; gap:1rem;
   }
   .footer-logo { font-family:'Cormorant Garamond', serif; font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; color: var(--teal-light); }
@@ -249,8 +249,8 @@
   .footer-contact a { color: var(--teal-light); text-decoration:none; }
 
   @media (max-width: 900px) {
-    .topbar { padding: 1rem 1.5rem; }
-    section.block { padding: 3rem 0; }
+    .topbar { padding: 1rem 0.5rem; }
+    section.block { padding: 1rem 0; }
   }
 </style>
 </head>
