@@ -218,45 +218,6 @@
       font-weight: 500;
     }
 
-    .about-topics {
-      margin-top: 3.5rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .about-topics-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal-dark);
-      font-weight: 500;
-      margin-bottom: 1.4rem;
-    }
-
-    .topic-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .topic-pill {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: var(--text-body);
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-    }
-
-    .topic-pill:hover {
-      border-color: var(--teal);
-      color: var(--teal-dark);
-      background: rgba(106,191,75,0.08);
-    }
-
     /* ============ TOPICS ============ */
     .section-topics {
       padding: 5rem 0;
@@ -337,101 +298,6 @@
       line-height: 1.7;
       color: rgba(184,232,154,0.65);
       font-weight: 300;
-    }
-
-    /* ============ WORKSHOPS ============ */
-    .section-workshops {
-      padding: 5rem 0;
-      background: var(--off-white);
-    }
-
-    .workshops-header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .workshops-header h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: var(--dark);
-      margin-bottom: 1rem;
-    }
-
-    .workshops-header p {
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      font-weight: 300;
-    }
-
-    .workshops-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .workshop-card {
-      background: var(--white);
-      padding: 2.5rem 2.2rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-
-    .workshop-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 0;
-      background: linear-gradient(to bottom, var(--teal), var(--rose));
-      transition: height 0.4s ease;
-    }
-
-    .workshop-card:hover::before { height: 100%; }
-    .workshop-card:hover { background: var(--off-white); }
-
-    .workshop-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--dark);
-      line-height: 1.35;
-      margin-bottom: 0.9rem;
-    }
-
-    .workshop-presenters {
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--teal-dark);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-    }
-
-    .workshop-abstract {
-      font-size: 0.85rem;
-      line-height: 1.8;
-      color: var(--text-body);
-      font-weight: 300;
-    }
-
-    .workshop-readmore {
-      margin-top: 1.2rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal-dark);
-      font-family: 'Outfit', sans-serif;
-    }
-
-    @media (max-width: 900px) {
-      .workshops-list { grid-template-columns: 1fr; }
     }
 
     /* ============ SPEAKERS ============ */
@@ -1209,7 +1075,7 @@
       .topics-grid, .speakers-grid { grid-template-columns: 1fr 1fr; }
       .dates-grid { grid-template-columns: 1fr; }
       .container { padding: 0 1.5rem; }
-      .section-about, .section-topics, .section-speakers, .section-workshops,
+      .section-about, .section-topics, .section-speakers,
       .section-venue, .section-dates, .section-register { padding: 3.5rem 0; }
     }
 	
@@ -1262,8 +1128,8 @@
     <ul class="nav-links">
 	  <li><a href="#register" class="nav-register">Register</a></li>
 	  <li><a href="speaker-info.html">Speaker Info</a></li><li><a href="#about">About</a></li>
+	  <li><a href="#topics">Topics</a></li>
       <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#workshops">Workshops</a></li>
       <li><a href="#committee">Committee</a></li>
       <li><a href="#venue">Venue</a></li>
 	  <li><a href="#partners">Partners</a></li>
@@ -1345,24 +1211,6 @@
           <p>Keynote lectures from leading experts are paired with talks from contemplative practitioners within the same sessions — a unique format that has made ICEM a distinctive voice in the global mindfulness and sustainability conversation.</p>
         </div>
       </div>
-
-      <div class="about-topics fade-in">
-        <div class="about-topics-label">Conference Topics</div>
-        <div class="topic-pills">
-          <span class="topic-pill">Environmental Awareness</span>
-          <span class="topic-pill">Climate Change Resilience</span>
-          <span class="topic-pill">Creating Mindful Environments</span>
-          <span class="topic-pill">Digital Environmental Mindfulness</span>
-          <span class="topic-pill">Mindfulness, Compassion &amp; Ecology</span>
-          <span class="topic-pill">Forest Bathing &amp; Nature Contemplation</span>
-          <span class="topic-pill">Mindfulness &amp; Pro-Environmental Behaviors</span>
-          <span class="topic-pill">Mindfulness &amp; Wellbeing</span>
-          <span class="topic-pill">Sound &amp; Awareness</span>
-          <span class="topic-pill">Nature-Based Mindfulness Interventions</span>
-          <span class="topic-pill">Sustainable Development: Interventions &amp; Tools</span>
-          <span class="topic-pill">Philosophical Perspectives on Mindfulness</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1381,6 +1229,48 @@
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
           </span>
         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOPICS ============ -->
+  <section class="section-topics" id="topics">
+    <div class="container">
+      <div class="topics-header">
+        <h2 class="fade-in">Conference <em style="font-style:italic; color:var(--teal-light);">Topics</em></h2>
+        <p class="fade-in">The conference welcomes submissions across a wide range of intersecting themes connecting psychology, mindfulness, and environmental sustainability — from empirical research in environmental psychology to contemplative and applied approaches.</p>
+      </div>
+      <div class="topics-grid">
+        <div class="topic-card fade-in">
+          <div class="topic-num">01</div>
+          <div class="topic-title">Awareness &amp; Sustainable Behavior</div>
+          <p class="topic-desc">How mindfulness and contemplative practices influence pro-environmental decision-making and lifestyle changes.</p>
+        </div>
+        <div class="topic-card fade-in">
+          <div class="topic-num">02</div>
+          <div class="topic-title">Human–Nature Relationships</div>
+          <p class="topic-desc">Connectedness to nature, restorative environments, ecotherapy, and nature-based approaches to well-being and sustainability.</p>
+        </div>
+        <div class="topic-card fade-in">
+          <div class="topic-num">03</div>
+          <div class="topic-title">Individual Awareness &amp; Societal Change</div>
+          <p class="topic-desc">Collective and systemic dimensions of environmental psychology, including community engagement and the role of inner transformation in addressing ecological crises.</p>
+        </div>
+        <div class="topic-card fade-in">
+          <div class="topic-num">04</div>
+          <div class="topic-title">Climate Psychology &amp; Ecomindfulness</div>
+          <p class="topic-desc">Eco-anxiety, climate grief, psychological adaptation, and the role of contemplative and psychological practice in building resilience.</p>
+        </div>
+        <div class="topic-card fade-in">
+          <div class="topic-num">05</div>
+          <div class="topic-title">Methods &amp; Research Approaches</div>
+          <p class="topic-desc">Quantitative, qualitative, psychophysiological, and neuroimaging approaches to studying the intersection of environmental psychology and mindfulness.</p>
+        </div>
+        <div class="topic-card fade-in">
+          <div class="topic-num">06</div>
+          <div class="topic-title">Interventions &amp; Applied Programmes</div>
+          <p class="topic-desc">Design and evaluation of mindfulness-based and nature-based interventions in educational, clinical, and community contexts.</p>
         </div>
       </div>
     </div>
@@ -1467,51 +1357,6 @@
 
     </div>
   </section>
-
-  <!-- ============ PRE-CONFERENCE WORKSHOPS ============ -->
-  <section class="section-workshops" id="workshops">
-    <div class="container">
-      <div class="workshops-header fade-in">
-        <div class="section-tag" style="justify-content:center;">17 September · 10:00–13:00</div>
-        <h2>Pre-Conference <em style="font-style:italic; color:var(--teal-dark);">Workshops</em></h2>
-        <p>Three parallel, hands-on sessions open to registered participants on the morning of Day 1</p>
-      </div>
-      <div class="workshops-list">
-        <div class="workshop-card fade-in" onclick="openWorkshop('hartkamp')" style="cursor:pointer;">
-          <div class="workshop-title">Cultivating Environmental Mindfulness: Mindfulness, Loving-Kindness, and Dialogical Inquiry</div>
-          <div class="workshop-presenters">Mirjam Hartkamp &amp; Antonino Raffone</div>
-          <p class="workshop-abstract">A three-hour experiential workshop exploring how mindfulness and loving-kindness practices can support a grounded, relational way of engaging with ecological experience and climate-related distress.</p>
-          <div class="workshop-readmore">Read full abstract →</div>
-        </div>
-        <div class="workshop-card fade-in" onclick="openWorkshop('freddi')" style="cursor:pointer;">
-          <div class="workshop-title">Mindtrek: Nature as Contemplative Mirror — An Experiential Workshop</div>
-          <div class="workshop-presenters">Guido Freddi</div>
-          <p class="workshop-abstract">An experiential practice for exploring consciousness through walking in nature, approaching the natural world as a mirror in which the structures of experience become visible.</p>
-          <div class="workshop-readmore">Read full abstract →</div>
-        </div>
-        <div class="workshop-card fade-in" onclick="openWorkshop('careli')" style="cursor:pointer;">
-          <div class="workshop-title">Maranasati (Mindfulness of Death)</div>
-          <div class="workshop-presenters">Silvia Careli López-Falfán</div>
-          <p class="workshop-abstract">A contemplative space exploring the Buddhist practice of Maranasati — turning awareness of impermanence and finitude into a source of wisdom, peace, and purposeful living.</p>
-          <div class="workshop-readmore">Read full abstract →</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WORKSHOP MODAL ============ -->
-  <div id="workshopModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,20,10,0.82); backdrop-filter:blur(6px); overflow-y:auto;" onclick="closeWorkshopOnBackdrop(event)">
-    <div style="max-width:740px; margin:5vh auto 5vh; background:var(--dark); border:1px solid rgba(106,191,75,0.2); position:relative; animation:modalIn 0.3s ease;">
-      <button onclick="closeWorkshop()" style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(106,191,75,0.1); border:1px solid rgba(106,191,75,0.25); color:var(--teal-light); width:38px; height:38px; border-radius:50%; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background 0.2s;"
-        onmouseover="this.style.background='rgba(106,191,75,0.2)'" onmouseout="this.style.background='rgba(106,191,75,0.1)'">✕</button>
-      <div style="padding:3rem 3rem 2rem; border-bottom:1px solid rgba(106,191,75,0.12);">
-        <div style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:0.6rem;">Pre-Conference Workshop</div>
-        <div id="wModalTitle" style="font-family:'Bebas Neue',sans-serif; font-size:2rem; color:#fff; letter-spacing:0.03em; line-height:1.15;"></div>
-        <div id="wModalPresenters" style="font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-top:0.7rem; font-weight:400;"></div>
-      </div>
-      <div id="wModalBody" style="padding:2.5rem 3rem 3rem; font-family:'Outfit',sans-serif; font-size:0.92rem; line-height:1.9; color:rgba(255,255,255,0.75); font-weight:300; white-space:pre-line;"></div>
-    </div>
-  </div>
 
   <!-- ============ SPEAKER MODAL ============ -->
   <div id="speakerModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(10,20,10,0.82); backdrop-filter:blur(6px); overflow-y:auto;" onclick="closeModalOnBackdrop(event)">
@@ -1816,8 +1661,8 @@
 		</div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#topics">Topics</a></li>
         <li><a href="#speakers">Speakers</a></li>
-        <li><a href="#workshops">Workshops</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#register">Register</a></li>
         <li><a href="#submit">Submit</a></li>
@@ -1939,72 +1784,6 @@
     }
 
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSpeaker(); });
-  </script>
-
-  <script>
-    const workshops = {
-      hartkamp: {
-        title: 'Cultivating Environmental Mindfulness: Mindfulness, Loving-Kindness, and Dialogical Inquiry',
-        presenters: 'Mirjam Hartkamp & Antonino Raffone · Department of Psychology, Sapienza University of Rome, Italy',
-        abstract: `Environmental awareness can evoke experiences of wonder, connectedness, gratitude, and care, while also bringing feelings of anxiety, grief, anger, helplessness, or disengagement. This three-hour experiential workshop explores how mindfulness and loving-kindness practices may support a grounded, balanced, and relational way of engaging with ecological experience and climate-related distress.
-
-The workshop is informed by the Pattern Theory of Mindfulness, which understands mindfulness as a dynamic and situated process emerging through the interaction of attentional, embodied, affective, ethical, interpersonal, and environmental processes. From this perspective, environmental and social contexts are not simply settings for mindfulness, but active contributors to mindful experience.
-
-Participants will be guided through a sequence of practices including embodied grounding, attentional stabilisation, open awareness, and mindful engagement with the surrounding environment. Loving-kindness meditation will extend this exploration towards oneself, others, non-human life, and the wider ecological world. These practices will be complemented by structured dyadic and small-group inquiry around themes such as ecological interdependence, vulnerability, responsibility, belonging, and meaningful action.
-
-The dialogical exercises draw on principles of mindful communication, including attentive listening, speaking from present-moment experience, and allowing reflection to emerge through dialogue. Particular attention will be given to exploring ways of relating to ecological distress through practices of acceptance, embodied regulation, equanimity, and compassionate presence.
-
-The workshop combines brief theoretical introductions by Prof. Antonino Raffone with guided meditation, reflective exercises, dialogical inquiry, and plenary discussion led by Dr. Mirjam Hartkamp. It invites participants to explore mindfulness as an embodied, relational, and ecological process, and to reflect on how contemplative practice may inform personal and collective responses to contemporary environmental challenges.`
-      },
-      freddi: {
-        title: 'Mindtrek: Nature as Contemplative Mirror — An Experiential Workshop',
-        presenters: 'Guido Freddi · Mindtrek Integrative Therapy, Rome',
-        abstract: `This workshop introduces Mindtrek, an experiential practice for exploring consciousness through walking in nature — accessible as a practice, rigorous as a method, applicable as a therapy — integrating Buddhist psychology, Terror Management Theory, and predictive-processing neuroscience. Developed across both clinical (an integrative oncology therapy program) and educational contexts, Mindtrek approaches nature not as a therapeutic backdrop but, drawing on Tibeto-Himalayan contemplative traditions, as a mirror in which the structures of experience become visible.
-
-The workshop combines a brief theoretical-methodological introduction with a guided practice — adapted for the indoor setting — that allows participants to move through, firsthand, some of the contemplative movements developed within the method. An open discussion will follow on clinical, methodological, and epistemological implications, with particular attention to integrating scientific rigor with contemplative practice without reducing either to the other.
-
-No prior contemplative experience is required.`
-      },
-      careli: {
-        title: 'Maranasati (Mindfulness of Death)',
-        presenters: 'Silvia Careli López-Falfán · Interdisciplinary Center for Research and Studies on Environment and Development (CIIEMAD), National Polytechnic Institute (IPN), Mexico',
-        abstract: `This workshop offers a contemplative space to explore the ancient Buddhist practice of Maranasati. By observing the environment — the changing seasons or the life cycle of plants — we can understand that impermanence is a fundamental law of nature. This approach helps to see death not as an end, but as a natural transition, making the practice of Maranasati even more grounded and intuitive for the participants.
-
-What to expect:
-• A brief introduction to the philosophical roots of Maranasati.
-• Guided meditations focused on the impermanence of life.
-• Reflective exercises to align daily actions with personal values.
-
-Goal: To transform our relationship with finitude into a source of wisdom, peace, and purposeful living.
-
-Key Themes:
-• Biological Impermanence: Understanding death as a vital part of the cycle of life.
-• Eco-meditation: Guided reflections on the "seasons" of human life.
-• Living Fully: Using the awareness of our finitude to prioritize our connection with the world around us.
-• Grounded: Down-to-earth practices for staying grounded.`
-      }
-    };
-
-    function openWorkshop(id) {
-      const w = workshops[id];
-      if (!w) return;
-      document.getElementById('wModalTitle').textContent      = w.title;
-      document.getElementById('wModalPresenters').textContent = w.presenters;
-      document.getElementById('wModalBody').textContent       = w.abstract;
-      document.getElementById('workshopModal').style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeWorkshop() {
-      document.getElementById('workshopModal').style.display = 'none';
-      document.body.style.overflow = '';
-    }
-
-    function closeWorkshopOnBackdrop(e) {
-      if (e.target === document.getElementById('workshopModal')) closeWorkshop();
-    }
-
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeWorkshop(); });
   </script>
 
   <script>
